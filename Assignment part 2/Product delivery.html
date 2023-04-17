@@ -1,0 +1,1020 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Delivery</title>
+    <link href="rb_validate.css" rel="stylesheet" />
+    <link href="Product delivery.css" rel="stylesheet">
+    <link href="overall.css" rel="stylesheet"/>
+    <link rel="shortcut icon" type="image/jpg" href="htmlicon.png"/>
+            <script type="text/javascript">
+
+               function display(obj,num)
+            {
+               var price = "Price" + num;
+               var qty = "Quantity" + num;
+               var amount = "Amount" + num;  
+            
+               if(obj.selectedIndex != 0)
+               {	
+
+                        document.getElementById(price).value=obj.value;
+                        document.getElementById(qty).disabled = false;
+                        document.getElementById(qty).value = "0";
+                        document.getElementById(amount).value = "0.00";
+                        document.getElementById(qty).focus();
+                        calculate();
+               }
+            
+            }
+
+            function sub(obj,num)
+            {
+               var amount = "Amount" + num;
+               var price = "Price" + num;
+               
+            
+               var qty = obj.selectedIndex;
+               if (qty>0){
+               var subtotal = parseFloat(document.getElementById(price).value)*qty;
+                  document.getElementById(amount).value = subtotal.toFixed(2);
+                  calculate();
+               }
+               else {
+                  var subtotal =parseFloat(0);
+                  document.getElementById(amount).value = subtotal.toFixed(2);
+                  calculate();
+               
+               }
+
+            }
+
+
+            function calculate()
+            {
+               
+               var amt1, amt2, amt3, amt4, amt5, amt6, amt7, amt8, amt9, amt10, amt11, amt12, amt13, amt14, amt15, total;	
+               amt1 = parseFloat(document.getElementById('Amount1').value);
+               amt2 = parseFloat(document.getElementById('Amount2').value);
+               amt3 = parseFloat(document.getElementById('Amount3').value); 
+               amt4 = parseFloat(document.getElementById('Amount4').value); 
+               amt5 = parseFloat(document.getElementById('Amount5').value); 
+               amt6 = parseFloat(document.getElementById('Amount6').value); 
+               amt7 = parseFloat(document.getElementById('Amount7').value); 
+               amt8 = parseFloat(document.getElementById('Amount8').value); 
+               amt9 = parseFloat(document.getElementById('Amount9').value); 
+               amt10 = parseFloat(document.getElementById('Amount10').value); 
+               amt11 = parseFloat(document.getElementById('Amount11').value); 
+               amt12 = parseFloat(document.getElementById('Amount12').value); 
+               amt13 = parseFloat(document.getElementById('Amount13').value); 
+               amt14 = parseFloat(document.getElementById('Amount14').value); 
+               amt15 = parseFloat(document.getElementById('Amount15').value); 
+
+               total = amt1 + amt2 + amt3 + amt4 + amt5 + amt6 + amt7 + amt8 + amt9 + amt10 + amt11 + amt12 + amt13 + amt14 + amt15 ;
+
+               document.getElementById('totalAmount').value=total.toFixed(2);
+               
+               
+            }
+
+
+            function quantity()
+            {
+               for(num=0; num<=30 ; num++)
+               {
+                  document.write("<option>" + num + "</option>");
+               }
+            
+            }
+        </script>
+    </head>
+
+<body>
+   <a href="member.html" class="contentmmbr" id="loginoption">Log in</a>
+        <a href="member.html" class="contentmmbr" id="signupoption">Sign up</a>
+   <a href="reservation.html" class="booking_icon"><img src="bookicon.png" alt="booking icon" class="booking_icon"></a>
+   <header>
+      <div>
+      <a href="homepage.html"><img src="web 3Ls Cafe1.png" alt="3L's Cafe logo" /></a>
+      </div>
+      <nav class="list">
+          <ul>
+              <li><a href="homepage.html">Home</a></li>
+              <li class="menu_dropdown">
+                  <a class="menu_dropdown_button" id="pointer" href="about.html">About us<span class="arrow">&#9660;</span></a>
+                  <div class="menu_dropdown_content">
+                      <a href="gallery.html">Gallery</a>
+                      <a href="Promotion.html">Promotions</a>
+                      <a href="rvNfb.html">Review & Feedback</a>
+                  </div>
+              </li>
+              <li class="menu_dropdown">
+                  <button class="menu_dropdown_button" >Menu<span class="arrow">&#9660;</span></button>
+                  <div class="menu_dropdown_content">
+                    <a href="food.html">Food</a>
+                    <a href="beverage.html">Beverage</a>
+                    <a href="dessert.html">Dessert</a>
+                  </div>
+              </li>
+              <li class="menu_dropdown">
+                  <button class="menu_dropdown_button" href="#">Specials<span class="arrow">&#9660;</span></button>
+                  <div class="menu_dropdown_content">
+                     <a href="CBintro.html">Coffee Beans Intro</a>
+                      <a href="recipe.html">Recipe</a>
+                  </div>
+              </li> 
+              <li class="menu_dropdown">
+                  <button class="menu_dropdown_button" href="#">The Store<span class="arrow">&#9660;</span></button>
+                  <div class="menu_dropdown_content">
+                      <a href="Addtocart.html">Add To Cart</a>
+                      <a href="Product delivery.html">Delivery</a>
+                      <a href="payment.html">Payment</a>
+                  </div>
+              </li>
+           </ul>
+      </nav>
+  </header>
+    <div class="row">
+        <div class="col-75">
+          <div class="container">
+            <form action="payment.html" method="get">
+              <div class="row">
+                <table style="width: 95%;">
+                     <div class="col-25">
+                        <tr id="heading">
+                           <th>Types of item</th>
+                           <th>Price</th>
+                           <th>Quantity</th>
+                           <th>Amount(RM)</th>
+                        </tr>
+                        <tr>
+                           <td>1.
+                              <select id="desc1" name="desc1" onchange="display(this,1);">
+                                 <optgroup label="Food menu">
+                                    <option>Select a Food</option>
+                                 </optgroup>
+                                 <optgroup label="Salad">  
+                                 <option value="15.00">Caesar Salad</option>
+                                 <option value="15.00">Avocado & Mango Salad</option>      
+                                 <option value="18.00">Smoked Duck Salad</option>        
+                                 </optgroup>
+                                 <optgroup label="Sandwich">
+                                    <option value="15">Egg Mayo Sandwich</option>
+                                    <option value="18">Bacon & Egg Sandwich</option>
+                                    <option value="17">Grilled Cheese & Ham Sandwich</option>
+                                    <option value="19">Smoked Salmon Bagel Sandwich</option>
+                                 </optgroup>
+                                 <optgroup label="Soup">
+                                    <option value="15">Mushroom Soup with Garlic Bread</option>
+                                 </optgroup>
+                                 <optgroup label="Pasta">
+                                    <option value="18">Mushroom Aglio Olio</option>
+                                    <option value="22">Seafood Aglio Olio</option>
+                                    <option value="18">Chicken Bolognese</option>
+                                    <option value="20">Meatball Bolognese</option>
+                                    <option value="20">Chicken Pesta</option>
+                                    <option value="20">Bacon Carbonara</option>
+                                 </optgroup>
+                                 <optgroup label="Rice Bowl">
+                                    <option value="20">Japanese Curry Rice Bowl with Chicken Fillet</option>
+                                    <option value="22">Japanese Beef Rice Bowl</option>
+                                    <option value="22">Salmon Rice Bowl</option>
+                                 </optgroup>
+                                 <optgroup label="Snacks">
+                                    <option value="8">French Fries</option>
+                                    <option value="16">Fried Chicken(6pcs)</option>
+                                 </optgroup>
+                              </select>
+                           </td>
+                           <td><input type="text" name="Price1" id="Price1" readonly size=8 disabled/></td>
+                           <td>
+                              <select name="Quantity1"  id="Quantity1" onchange="sub(this,1);" disabled>
+                                 <script type="text/javascript">
+                                    quantity();
+                                 </script>
+                              </select>
+                           </td>
+                           <td><input type="text" name="Amount1" id="Amount1" size=10 class=numbers  value="0.00"  onchange="calculate();" disabled  /></td>
+                        </tr>
+                      <tr>
+                        <td>2.
+                           <select id="desc5" name="desc2" onchange="display(this,2);">
+                              <optgroup label="Food menu">
+                                 <option>Select a Food</option>
+                              </optgroup>
+                              <optgroup label="Salad">  
+                                 <option value="15.00">Caesar Salad</option>
+                                 <option value="15.00">Avocado & Mango Salad</option>      
+                                 <option value="18.00">Smoked Duck Salad</option>        
+                              </optgroup>
+                              <optgroup label="Sandwich">
+                                 <option value="15">Egg Mayo Sandwich</option>
+                                 <option value="18">Bacon & Egg Sandwich</option>
+                                 <option value="17">Grilled Cheese & Ham Sandwich</option>
+                                 <option value="19">Smoked Salmon Bagel Sandwich</option>
+                              </optgroup>
+                              <optgroup label="Soup">
+                                 <option value="15">Mushroom Soup with Garlic Bread</option>
+                              </optgroup>
+                              <optgroup label="Pasta">
+                                 <option value="18">Mushroom Aglio Olio</option>
+                                 <option value="22">Seafood Aglio Olio</option>
+                                 <option value="18">Chicken Bolognese</option>
+                                 <option value="20">Meatball Bolognese</option>
+                                 <option value="20">Chicken Pesta</option>
+                                 <option value="20">Bacon Carbonara</option>
+                              </optgroup>
+                              <optgroup label="Rice Bowl">
+                                 <option value="20">Japanese Curry Rice Bowl with Chicken Fillet</option>
+                                 <option value="22">Japanese Beef Rice Bowl</option>
+                                 <option value="22">Salmon Rice Bowl</option>
+                              </optgroup>
+                              <optgroup label="Snacks">
+                                 <option value="8">French Fries</option>
+                                 <option value="16">Fried Chicken(6pcs)</option>
+                              </optgroup>
+                           </select>
+                        </td>
+                        <td><input type="text" name="Price2" id="Price2" readonly size=8 disabled/></td>
+                        <td>
+                           <select name="Quantity2"  id="Quantity2" onchange="sub(this,2);" disabled>
+                              <script type="text/javascript">
+                                 quantity();
+                              </script>
+                           </select>
+                        </td>
+                        <td><input type="text" name="Amount2" id="Amount2" size=10 class=numbers  value="0.00"  onchange="calculate();" disabled  /></td>
+                     </tr>
+                     <tr>
+                        <td>3.
+                           <select id="desc3" name="desc3" onchange="display(this,3);">
+                              <optgroup label="Food menu">
+                                 <option>Select a Food</option>
+                              </optgroup>
+                              <optgroup label="Salad">  
+                              <option value="15.00">Caesar Salad</option>
+                              <option value="15.00">Avocado & Mango Salad</option>      
+                              <option value="18.00">Smoked Duck Salad</option>        
+                              </optgroup>
+                              <optgroup label="Sandwich">
+                                 <option value="15">Egg Mayo Sandwich</option>
+                                 <option value="18">Bacon & Egg Sandwich</option>
+                                 <option value="17">Grilled Cheese & Ham Sandwich</option>
+                                 <option value="19">Smoked Salmon Bagel Sandwich</option>
+                              </optgroup>
+                              <optgroup label="Soup">
+                                 <option value="15">Mushroom Soup with Garlic Bread</option>
+                              </optgroup>
+                              <optgroup label="Pasta">
+                                 <option value="18">Mushroom Aglio Olio</option>
+                                 <option value="22">Seafood Aglio Olio</option>
+                                 <option value="18">Chicken Bolognese</option>
+                                 <option value="20">Meatball Bolognese</option>
+                                 <option value="20">Chicken Pesta</option>
+                                 <option value="20">Bacon Carbonara</option>
+                              </optgroup>
+                              <optgroup label="Rice Bowl">
+                                 <option value="20">Japanese Curry Rice Bowl with Chicken Fillet</option>
+                                 <option value="22">Japanese Beef Rice Bowl</option>
+                                 <option value="22">Salmon Rice Bowl</option>
+                              </optgroup>
+                              <optgroup label="Snacks">
+                                 <option value="8">French Fries</option>
+                                 <option value="16">Fried Chicken(6pcs)</option>
+                              </optgroup>
+                           </select>
+                        </td>
+                        <td><input type="text" name="Price3" id="Price3" readonly size=8 disabled/></td>
+                        <td>
+                           <select name="Quantity3"  id="Quantity3" onchange="sub(this,3);" disabled>
+                              <script type="text/javascript">
+                                 quantity();
+                              </script>
+                           </select>
+                        </td>
+                        <td><input type="text" name="Amount3" id="Amount3" size=10 class=numbers  value="0.00"  onchange="calculate();" disabled  /></td>
+                     </tr>
+                   <tr>
+                     <td>4.
+                        <select id="desc4" name="desc4" onchange="display(this,4);">
+                           <optgroup label="Food menu">
+                              <option>Select a Food</option>
+                           </optgroup>
+                           <optgroup label="Salad">  
+                              <option value="15.00">Caesar Salad</option>
+                              <option value="15.00">Avocado & Mango Salad</option>      
+                              <option value="18.00">Smoked Duck Salad</option>        
+                           </optgroup>
+                           <optgroup label="Sandwich">
+                              <option value="15">Egg Mayo Sandwich</option>
+                              <option value="18">Bacon & Egg Sandwich</option>
+                              <option value="17">Grilled Cheese & Ham Sandwich</option>
+                              <option value="19">Smoked Salmon Bagel Sandwich</option>
+                           </optgroup>
+                           <optgroup label="Soup">
+                              <option value="15">Mushroom Soup with Garlic Bread</option>
+                           </optgroup>
+                           <optgroup label="Pasta">
+                              <option value="18">Mushroom Aglio Olio</option>
+                              <option value="22">Seafood Aglio Olio</option>
+                              <option value="18">Chicken Bolognese</option>
+                              <option value="20">Meatball Bolognese</option>
+                              <option value="20">Chicken Pesta</option>
+                              <option value="20">Bacon Carbonara</option>
+                           </optgroup>
+                           <optgroup label="Rice Bowl">
+                              <option value="20">Japanese Curry Rice Bowl with Chicken Fillet</option>
+                              <option value="22">Japanese Beef Rice Bowl</option>
+                              <option value="22">Salmon Rice Bowl</option>
+                           </optgroup>
+                           <optgroup label="Snacks">
+                              <option value="8">French Fries</option>
+                              <option value="16">Fried Chicken(6pcs)</option>
+                           </optgroup>
+                        </select>
+                     </td>
+                     <td><input type="text" name="Price4" id="Price4" readonly size=8 disabled/></td>
+                     <td>
+                        <select name="Quantity4"  id="Quantity4" onchange="sub(this,4);" disabled>
+                           <script type="text/javascript">
+                              quantity();
+                           </script>
+                        </select>
+                     </td>
+                     <td><input type="text" name="Amount4" id="Amount4" size=10 class=numbers  value="0.00"  onchange="calculate();" disabled  /></td>
+                  </tr>
+                  <tr>
+                     <td>5.
+                        <select id="desc5" name="desc5" onchange="display(this,5);">
+                           <optgroup label="Food menu">
+                              <option>Select a Food</option>
+                           </optgroup>
+                           <optgroup label="Salad">  
+                           <option value="15.00">Caesar Salad</option>
+                           <option value="15.00">Avocado & Mango Salad</option>      
+                           <option value="18.00">Smoked Duck Salad</option>        
+                           </optgroup>
+                           <optgroup label="Sandwich">
+                              <option value="15">Egg Mayo Sandwich</option>
+                              <option value="18">Bacon & Egg Sandwich</option>
+                              <option value="17">Grilled Cheese & Ham Sandwich</option>
+                              <option value="19">Smoked Salmon Bagel Sandwich</option>
+                           </optgroup>
+                           <optgroup label="Soup">
+                              <option value="15">Mushroom Soup with Garlic Bread</option>
+                           </optgroup>
+                           <optgroup label="Pasta">
+                              <option value="18">Mushroom Aglio Olio</option>
+                              <option value="22">Seafood Aglio Olio</option>
+                              <option value="18">Chicken Bolognese</option>
+                              <option value="20">Meatball Bolognese</option>
+                              <option value="20">Chicken Pesta</option>
+                              <option value="20">Bacon Carbonara</option>
+                           </optgroup>
+                           <optgroup label="Rice Bowl">
+                              <option value="20">Japanese Curry Rice Bowl with Chicken Fillet</option>
+                              <option value="22">Japanese Beef Rice Bowl</option>
+                              <option value="22">Salmon Rice Bowl</option>
+                           </optgroup>
+                           <optgroup label="Snacks">
+                              <option value="8">French Fries</option>
+                              <option value="16">Fried Chicken(6pcs)</option>
+                           </optgroup>
+                        </select>
+                     </td>
+                     <td><input type="text" name="Price5" id="Price5" readonly size=8 disabled/></td>
+                     <td>
+                        <select name="Quantity5"  id="Quantity5" onchange="sub(this,5);" disabled>
+                           <script type="text/javascript">
+                              quantity();
+                           </script>
+                        </select>
+                     </td>
+                     <td><input type="text" name="Amount5" id="Amount5" size=10 class=numbers  value="0.00"  onchange="calculate();" disabled  /></td>
+                  </tr>
+                <tr>
+                  <td>6.
+                     <select id="desc6" name="desc6" onchange="display(this,6);">
+                        <optgroup label="Food menu">
+                           <option>Select a Food</option>
+                        </optgroup>
+                        <optgroup label="Salad">  
+                           <option value="15.00">Caesar Salad</option>
+                           <option value="15.00">Avocado & Mango Salad</option>      
+                           <option value="18.00">Smoked Duck Salad</option>        
+                        </optgroup>
+                        <optgroup label="Sandwich">
+                           <option value="15">Egg Mayo Sandwich</option>
+                           <option value="18">Bacon & Egg Sandwich</option>
+                           <option value="17">Grilled Cheese & Ham Sandwich</option>
+                           <option value="19">Smoked Salmon Bagel Sandwich</option>
+                        </optgroup>
+                        <optgroup label="Soup">
+                           <option value="15">Mushroom Soup with Garlic Bread</option>
+                        </optgroup>
+                        <optgroup label="Pasta">
+                           <option value="18">Mushroom Aglio Olio</option>
+                           <option value="22">Seafood Aglio Olio</option>
+                           <option value="18">Chicken Bolognese</option>
+                           <option value="20">Meatball Bolognese</option>
+                           <option value="20">Chicken Pesta</option>
+                           <option value="20">Bacon Carbonara</option>
+                        </optgroup>
+                        <optgroup label="Rice Bowl">
+                           <option value="20">Japanese Curry Rice Bowl with Chicken Fillet</option>
+                           <option value="22">Japanese Beef Rice Bowl</option>
+                           <option value="22">Salmon Rice Bowl</option>
+                        </optgroup>
+                        <optgroup label="Snacks">
+                           <option value="8">French Fries</option>
+                           <option value="16">Fried Chicken(6pcs)</option>
+                        </optgroup>
+                     </select>
+                  </td>
+                  <td><input type="text" name="Price6" id="Price6" readonly size=8 disabled/></td>
+                  <td>
+                     <select name="Quantity6"  id="Quantity6" onchange="sub(this,6);" disabled>
+                        <script type="text/javascript">
+                           quantity();
+                        </script>
+                     </select>
+                  </td>
+                  <td><input type="text" name="Amount6" id="Amount6" size=10 class=numbers  value="0.00"  onchange="calculate();" disabled  /></td>
+               </tr>
+               <tr>
+                  <td>7.
+                     <select id="desc7" name="desc7" onchange="display(this,7);">
+                        <optgroup label="Food menu">
+                           <option>Select a Food</option>
+                        </optgroup>
+                        <optgroup label="Salad">  
+                        <option value="15.00">Caesar Salad</option>
+                        <option value="15.00">Avocado & Mango Salad</option>      
+                        <option value="18.00">Smoked Duck Salad</option>        
+                        </optgroup>
+                        <optgroup label="Sandwich">
+                           <option value="15">Egg Mayo Sandwich</option>
+                           <option value="18">Bacon & Egg Sandwich</option>
+                           <option value="17">Grilled Cheese & Ham Sandwich</option>
+                           <option value="19">Smoked Salmon Bagel Sandwich</option>
+                        </optgroup>
+                        <optgroup label="Soup">
+                           <option value="15">Mushroom Soup with Garlic Bread</option>
+                        </optgroup>
+                        <optgroup label="Pasta">
+                           <option value="18">Mushroom Aglio Olio</option>
+                           <option value="22">Seafood Aglio Olio</option>
+                           <option value="18">Chicken Bolognese</option>
+                           <option value="20">Meatball Bolognese</option>
+                           <option value="20">Chicken Pesta</option>
+                           <option value="20">Bacon Carbonara</option>
+                        </optgroup>
+                        <optgroup label="Rice Bowl">
+                           <option value="20">Japanese Curry Rice Bowl with Chicken Fillet</option>
+                           <option value="22">Japanese Beef Rice Bowl</option>
+                           <option value="22">Salmon Rice Bowl</option>
+                        </optgroup>
+                        <optgroup label="Snacks">
+                           <option value="8">French Fries</option>
+                           <option value="16">Fried Chicken(6pcs)</option>
+                        </optgroup>
+                     </select>
+                  </td>
+                  <td><input type="text" name="Price7" id="Price7" readonly size=8 disabled/></td>
+                  <td>
+                     <select name="Quantity7"  id="Quantity7" onchange="sub(this,7);" disabled>
+                        <script type="text/javascript">
+                           quantity();
+                        </script>
+                     </select>
+                  </td>
+                  <td><input type="text" name="Amount7" id="Amount7" size=10 class=numbers  value="0.00"  onchange="calculate();" disabled  /></td>
+               </tr>
+             <tr>
+               <td>8.
+                  <select id="desc8" name="desc8" onchange="display(this,8);">
+                     <optgroup label="Food menu">
+                        <option>Select a Food</option>
+                     </optgroup>
+                     <optgroup label="Salad">  
+                        <option value="15.00">Caesar Salad</option>
+                        <option value="15.00">Avocado & Mango Salad</option>      
+                        <option value="18.00">Smoked Duck Salad</option>        
+                     </optgroup>
+                     <optgroup label="Sandwich">
+                        <option value="15">Egg Mayo Sandwich</option>
+                        <option value="18">Bacon & Egg Sandwich</option>
+                        <option value="17">Grilled Cheese & Ham Sandwich</option>
+                        <option value="19">Smoked Salmon Bagel Sandwich</option>
+                     </optgroup>
+                     <optgroup label="Soup">
+                        <option value="15">Mushroom Soup with Garlic Bread</option>
+                     </optgroup>
+                     <optgroup label="Pasta">
+                        <option value="18">Mushroom Aglio Olio</option>
+                        <option value="22">Seafood Aglio Olio</option>
+                        <option value="18">Chicken Bolognese</option>
+                        <option value="20">Meatball Bolognese</option>
+                        <option value="20">Chicken Pesta</option>
+                        <option value="20">Bacon Carbonara</option>
+                     </optgroup>
+                     <optgroup label="Rice Bowl">
+                        <option value="20">Japanese Curry Rice Bowl with Chicken Fillet</option>
+                        <option value="22">Japanese Beef Rice Bowl</option>
+                        <option value="22">Salmon Rice Bowl</option>
+                     </optgroup>
+                     <optgroup label="Snacks">
+                        <option value="8">French Fries</option>
+                        <option value="16">Fried Chicken(6pcs)</option>
+                     </optgroup>
+                  </select>
+               </td>
+               <td><input type="text" name="Price8" id="Price8" readonly size=8 disabled/></td>
+               <td>
+                  <select name="Quantity8"  id="Quantity8" onchange="sub(this,8);" disabled>
+                     <script type="text/javascript">
+                        quantity();
+                     </script>
+                  </select>
+               </td>
+               <td><input type="text" name="Amount8" id="Amount8" size=10 class=numbers  value="0.00"  onchange="calculate();" disabled  /></td>
+               </tr>
+               <tr>
+                  <td>9.
+                  <select id="desc9" name="desc9" onchange="display(this,9);">
+                     <optgroup label="Beverage Menu">
+                        <option>Select a Drink</option>
+                     </optgroup>
+                     <optgroup label="Hot Drinks"></optgroup>
+                     <optgroup label="Coffee">
+                        <option value="7">Expresso</option>
+                        <option value="8">Cappucino</option>
+                        <option value="8">Mocha</option>
+                        <option value="8">Latte</option>
+                        <option value="9">Caramel Macchiato</option>
+                     </optgroup>
+                     <optgroup label="Tea">
+                        <option value="7">Earl Grey</option>
+                        <option value="7">English Breakfast</option>
+                        <option value="7">Peppermint</option>
+                        <option value="12">Fruit Tea</option>
+                     </optgroup>
+                     <optgroup label="Other">
+                        <option value="8">Hot Chocolate</option>
+                        <option value="9">Matcha Latte</option>
+                        <option value="7">Honey Lemon</option>
+                        <option value="7">Lemongrass Tea</option>
+                        <option value="7">Lemon Tea</option>
+                     </optgroup>
+                     <optgroup label="Iced Drinks"></optgroup>
+                     <optgroup label="Iced Coffee">
+                        <option value="9">Iced Ammericano</option>
+                        <option value="10">Iced Mocha</option>
+                        <option value="10">Iced Cappucino</option>
+                        <option value="10">Iced Latte</option>
+                        <option value="12">Iced Hazelnut Latte</option>
+                        <option value="12">Iced Caramel Latte</option>
+                        <option value="12">Iced Caramel Macchiato</option>
+                     </optgroup>
+                     <optgroup label="Non-Coffee Drinks">
+                        <option value="10">Iced Chocolate</option>
+                        <option value="12">Iced Hazelnut Chocolate</option>
+                        <option value="12">Iced Peppermint Chocolate</option>
+                        <option value="12">Iced Matcha Latte</option>
+                        <option value="12">Iced Hojicha Latte</option>
+                     </optgroup>
+                     <optgroup label="Smoothies">
+                        <option value="12">Orep Smoothie</option>
+                        <option value="13">Chocolate Banana Smoothie</option>
+                        <option value="13">Avocado Banana Smoothie</option>
+                        <option value="13">Yuzu Yogurt's Smoothie</option>
+                        <option value="13">Mixed Berries Smoothie</option>
+                     </optgroup>
+                     <optgroup label="Fresh Juice">
+                        <option value="10">Apple Juice</option>
+                        <option value="10">Orange Juice</option>
+                        <option value="10">Watermelon Juice</option>
+                     </optgroup>
+                     <optgroup label="Sparking Drinks">
+                        <option value="12">Lemonade</option>
+                        <option value="12">Yuzu Lemonade</option>
+                        <option value="12">Grapefruit Soda</option>
+                        <option value="12">Mojito Mocktail</option>
+                        <option value="12">Citrus Espresso</option>
+                     </optgroup>
+                     <optgroup label="Other">
+                        <option value="8">Iced Lemon Tea</option>
+                        <option value="10">Iced Grapefruit Tea</option>
+                        <option value="10">Yuzu Espresso Tonic</option>
+                     </optgroup>
+                  </select>
+                  </td>
+                  <td><input type="text" name="Price9" id="Price9" readonly size=8 disabled/></td>
+                  <td>
+                  <select name="Quantity9"  id="Quantity9" onchange="sub(this,9);" disabled>
+                     <script type="text/javascript">
+                         quantity();
+                     </script>
+                  </select>
+                  </td>
+                  <td><input type="text" name="Amount9" id="Amount9" size=10 class=numbers  value="0.00"  onchange="calculate();" disabled  /></td>
+               </tr>
+               <tr>
+                  <td>10.
+                  <select id="desc10" name="desc10" onchange="display(this,10);">
+                     <optgroup label="Beverage Menu">
+                        <option>Select a Drink</option>
+                     </optgroup>
+                     <optgroup label="Hot Drinks"></optgroup>
+                     <optgroup label="Coffee">
+                        <option value="7">Expresso</option>
+                        <option value="8">Cappucino</option>
+                        <option value="8">Mocha</option>
+                        <option value="8">Latte</option>
+                        <option value="9">Caramel Macchiato</option>
+                     </optgroup>
+                     <optgroup label="Tea">
+                        <option value="7">Earl Grey</option>
+                        <option value="7">English Breakfast</option>
+                        <option value="7">Peppermint</option>
+                        <option value="12">Fruit Tea</option>
+                     </optgroup>
+                     <optgroup label="Other">
+                        <option value="8">Hot Chocolate</option>
+                        <option value="9">Matcha Latte</option>
+                        <option value="7">Honey Lemon</option>
+                        <option value="7">Lemongrass Tea</option>
+                        <option value="7">Lemon Tea</option>
+                     </optgroup>
+                     <optgroup label="Iced Drinks"></optgroup>
+                     <optgroup label="Iced Coffee">
+                        <option value="9">Iced Ammericano</option>
+                        <option value="10">Iced Mocha</option>
+                        <option value="10">Iced Cappucino</option>
+                        <option value="10">Iced Latte</option>
+                        <option value="12">Iced Hazelnut Latte</option>
+                        <option value="12">Iced Caramel Latte</option>
+                        <option value="12">Iced Caramel Macchiato</option>
+                     </optgroup>
+                     <optgroup label="Non-Coffee Drinks">
+                        <option value="10">Iced Chocolate</option>
+                        <option value="12">Iced Hazelnut Chocolate</option>
+                        <option value="12">Iced Peppermint Chocolate</option>
+                        <option value="12">Iced Matcha Latte</option>
+                        <option value="12">Iced Hojicha Latte</option>
+                     </optgroup>
+                     <optgroup label="Smoothies">
+                        <option value="12">Orep Smoothie</option>
+                        <option value="13">Chocolate Banana Smoothie</option>
+                        <option value="13">Avocado Banana Smoothie</option>
+                        <option value="13">Yuzu Yogurt's Smoothie</option>
+                        <option value="13">Mixed Berries Smoothie</option>
+                     </optgroup>
+                     <optgroup label="Fresh Juice">
+                        <option value="10">Apple Juice</option>
+                        <option value="10">Orange Juice</option>
+                        <option value="10">Watermelon Juice</option>
+                     </optgroup>
+                     <optgroup label="Sparking Drinks">
+                        <option value="12">Lemonade</option>
+                        <option value="12">Yuzu Lemonade</option>
+                        <option value="12">Grapefruit Soda</option>
+                        <option value="12">Mojito Mocktail</option>
+                        <option value="12">Citrus Espresso</option>
+                     </optgroup>
+                     <optgroup label="Other">
+                        <option value="8">Iced Lemon Tea</option>
+                        <option value="10">Iced Grapefruit Tea</option>
+                        <option value="10">Yuzu Espresso Tonic</option>
+                     </optgroup>
+                  </select>
+                  </td>
+                  <td><input type="text" name="Price10" id="Price10" readonly size=8 disabled/></td>
+                  <td>
+                  <select name="Quantity10"  id="Quantity10" onchange="sub(this,10);" disabled>
+                     <script type="text/javascript">
+                         quantity();
+                     </script>
+                  </select>
+                  </td>
+                  <td><input type="text" name="Amount10" id="Amount10" size=10 class=numbers  value="0.00"  onchange="calculate();" disabled  /></td>
+               </tr>
+               <tr>
+                  <td>11.
+                  <select id="desc11" name="desc11" onchange="display(this,11);">
+                     <optgroup label="Beverage Menu">
+                        <option>Select a Drink</option>
+                     </optgroup>
+                     <optgroup label="Hot Drinks"></optgroup>
+                     <optgroup label="Coffee">
+                        <option value="7">Expresso</option>
+                        <option value="8">Cappucino</option>
+                        <option value="8">Mocha</option>
+                        <option value="8">Latte</option>
+                        <option value="9">Caramel Macchiato</option>
+                     </optgroup>
+                     <optgroup label="Tea">
+                        <option value="7">Earl Grey</option>
+                        <option value="7">English Breakfast</option>
+                        <option value="7">Peppermint</option>
+                        <option value="12">Fruit Tea</option>
+                     </optgroup>
+                     <optgroup label="Other">
+                        <option value="8">Hot Chocolate</option>
+                        <option value="9">Matcha Latte</option>
+                        <option value="7">Honey Lemon</option>
+                        <option value="7">Lemongrass Tea</option>
+                        <option value="7">Lemon Tea</option>
+                     </optgroup>
+                     <optgroup label="Iced Drinks"></optgroup>
+                     <optgroup label="Iced Coffee">
+                        <option value="9">Iced Ammericano</option>
+                        <option value="10">Iced Mocha</option>
+                        <option value="10">Iced Cappucino</option>
+                        <option value="10">Iced Latte</option>
+                        <option value="12">Iced Hazelnut Latte</option>
+                        <option value="12">Iced Caramel Latte</option>
+                        <option value="12">Iced Caramel Macchiato</option>
+                     </optgroup>
+                     <optgroup label="Non-Coffee Drinks">
+                        <option value="10">Iced Chocolate</option>
+                        <option value="12">Iced Hazelnut Chocolate</option>
+                        <option value="12">Iced Peppermint Chocolate</option>
+                        <option value="12">Iced Matcha Latte</option>
+                        <option value="12">Iced Hojicha Latte</option>
+                     </optgroup>
+                     <optgroup label="Smoothies">
+                        <option value="12">Orep Smoothie</option>
+                        <option value="13">Chocolate Banana Smoothie</option>
+                        <option value="13">Avocado Banana Smoothie</option>
+                        <option value="13">Yuzu Yogurt's Smoothie</option>
+                        <option value="13">Mixed Berries Smoothie</option>
+                     </optgroup>
+                     <optgroup label="Fresh Juice">
+                        <option value="10">Apple Juice</option>
+                        <option value="10">Orange Juice</option>
+                        <option value="10">Watermelon Juice</option>
+                     </optgroup>
+                     <optgroup label="Sparking Drinks">
+                        <option value="12">Lemonade</option>
+                        <option value="12">Yuzu Lemonade</option>
+                        <option value="12">Grapefruit Soda</option>
+                        <option value="12">Mojito Mocktail</option>
+                        <option value="12">Citrus Espresso</option>
+                     </optgroup>
+                     <optgroup label="Other">
+                        <option value="8">Iced Lemon Tea</option>
+                        <option value="10">Iced Grapefruit Tea</option>
+                        <option value="10">Yuzu Espresso Tonic</option>
+                     </optgroup>
+                  </select>
+                  </td>
+                  <td><input type="text" name="Price11" id="Price11" readonly size=8 disabled/></td>
+                  <td>
+                  <select name="Quantity11"  id="Quantity11" onchange="sub(this,11);" disabled>
+                     <script type="text/javascript">
+                         quantity();
+                     </script>
+                  </select>
+                  </td>
+                  <td><input type="text" name="Amount11" id="Amount11" size=10 class=numbers  value="0.00"  onchange="calculate();" disabled  /></td>
+               </tr>
+               <tr>
+                  <td>12.
+                  <select id="desc9" name="desc9" onchange="display(this,12);">
+                     <optgroup label="Beverage Menu">
+                        <option>Select a Drink</option>
+                     </optgroup>
+                     <optgroup label="Hot Drinks"></optgroup>
+                     <optgroup label="Coffee">
+                        <option value="7">Expresso</option>
+                        <option value="8">Cappucino</option>
+                        <option value="8">Mocha</option>
+                        <option value="8">Latte</option>
+                        <option value="9">Caramel Macchiato</option>
+                     </optgroup>
+                     <optgroup label="Tea">
+                        <option value="7">Earl Grey</option>
+                        <option value="7">English Breakfast</option>
+                        <option value="7">Peppermint</option>
+                        <option value="12">Fruit Tea</option>
+                     </optgroup>
+                     <optgroup label="Other">
+                        <option value="8">Hot Chocolate</option>
+                        <option value="9">Matcha Latte</option>
+                        <option value="7">Honey Lemon</option>
+                        <option value="7">Lemongrass Tea</option>
+                        <option value="7">Lemon Tea</option>
+                     </optgroup>
+                     <optgroup label="Iced Drinks"></optgroup>
+                     <optgroup label="Iced Coffee">
+                        <option value="9">Iced Ammericano</option>
+                        <option value="10">Iced Mocha</option>
+                        <option value="10">Iced Cappucino</option>
+                        <option value="10">Iced Latte</option>
+                        <option value="12">Iced Hazelnut Latte</option>
+                        <option value="12">Iced Caramel Latte</option>
+                        <option value="12">Iced Caramel Macchiato</option>
+                     </optgroup>
+                     <optgroup label="Non-Coffee Drinks">
+                        <option value="10">Iced Chocolate</option>
+                        <option value="12">Iced Hazelnut Chocolate</option>
+                        <option value="12">Iced Peppermint Chocolate</option>
+                        <option value="12">Iced Matcha Latte</option>
+                        <option value="12">Iced Hojicha Latte</option>
+                     </optgroup>
+                     <optgroup label="Smoothies">
+                        <option value="12">Orep Smoothie</option>
+                        <option value="13">Chocolate Banana Smoothie</option>
+                        <option value="13">Avocado Banana Smoothie</option>
+                        <option value="13">Yuzu Yogurt's Smoothie</option>
+                        <option value="13">Mixed Berries Smoothie</option>
+                     </optgroup>
+                     <optgroup label="Fresh Juice">
+                        <option value="10">Apple Juice</option>
+                        <option value="10">Orange Juice</option>
+                        <option value="10">Watermelon Juice</option>
+                     </optgroup>
+                     <optgroup label="Sparking Drinks">
+                        <option value="12">Lemonade</option>
+                        <option value="12">Yuzu Lemonade</option>
+                        <option value="12">Grapefruit Soda</option>
+                        <option value="12">Mojito Mocktail</option>
+                        <option value="12">Citrus Espresso</option>
+                     </optgroup>
+                     <optgroup label="Other">
+                        <option value="8">Iced Lemon Tea</option>
+                        <option value="10">Iced Grapefruit Tea</option>
+                        <option value="10">Yuzu Espresso Tonic</option>
+                     </optgroup>
+                  </select>
+                  </td>
+                  <td><input type="text" name="Price12" id="Price12" readonly size=8 disabled/></td>
+                  <td>
+                  <select name="Quantity12"  id="Quantity12" onchange="sub(this,12);" disabled>
+                     <script type="text/javascript">
+                         quantity();
+                     </script>
+                  </select>
+                  </td>
+                  <td><input type="text" name="Amount12" id="Amount12" size=10 class=numbers  value="0.00"  onchange="calculate();" disabled  /></td>
+               </tr>
+               
+               <tr>
+                  <td>13.
+                  <select id="desc13" name="desc13" onchange="display(this,13);">
+                     <optgroup label="Dessert Menu">
+                     <option>Select a Dessert</option>
+                     </optgroup>
+                     <optgroup label="Waffles">
+                        <option value="13">Classic Waffle topped with Vanilla Ice Cream</option>
+                        <option value="16">Dark Chocolate Waffle topped with Chocolate Ice Cream</option>
+                        <option value="18">Pandan Banana Waffle topped with Cocunut Ice Cream</option>
+                        <option value="18">Charcoal Waffle topped with Oolong Ice Cream</option>
+                        <option value="18">Boba Waffle topped with Brown Sugar Ice Cream</option>
+                     </optgroup>
+                     <optgroup label="Churros">
+                        <option value="15">Churros with Nutella sauce</option>
+                        <option value="15">Churros with Salted Caramel sauce</option>
+                        <option value="15">Charcoal Churros with Salted egg sauce</option>
+                     </optgroup>
+                     <optgroup label="Cakes">
+                        <option value="12">Brownies with ice cream</option>
+                        <option value="12">Molten Lava Cake with Vanilla ice Cream</option>
+                        <option value="12">Strawberry Shortcake(per slice)</option>
+                        <option value="12">Tiramusu(per slice)</option>
+                        <option value="12">matcha Burnt Cheesecake(per slice)</option>
+                        <option value="12">Mango Cheesecake(per slice)</option>
+                     </optgroup>
+                     <optgroup label="Other">
+                        <option value="12">Creme Brulee</option>
+                        <option value="12">Chocolate Mousse</option>
+                     </optgroup>
+                  </select>
+                  </td>
+                  <td><input type="text" name="Price13" id="Price13" readonly size=8 disabled/></td>
+                  <td>
+                  <select name="Quantity13"  id="Quantity13" onchange="sub(this,13);" disabled>
+                     <script type="text/javascript">
+                         quantity();
+                     </script>
+                  </select>
+                  </td>
+                  <td><input type="text" name="Amount13" id="Amount13" size=10 class=numbers  value="0.00"  onchange="calculate();" disabled  /></td>
+               </tr>
+               <tr>
+                  <td>14.
+                     <select id="desc14" name="desc14" onchange="display(this,14);">
+                        <optgroup label="Coffee Powder">
+                        <option>Select a Coffee Powder</option>
+                        <option value="48.00">Instant Coffee Classico Taste x1/250g</option>
+                        <option value="58.50">Ground Espresso Classico Coffee Medium Roast x1/250g</option>
+                        <option value="58.50">Ground Moka Classico Coffee Medium Roast x1/250g </option>
+                        <option value="58.50">Ground Espresso Intenso Coffee Dark Roast x1/250g</option>
+                        <option value="58.50">Ground Decaffeinated Coffee Medium Roast x1/250g</option>
+                     </select>
+                     </td>
+                     <td><input type="text" name="Price14" id="Price14" readonly size=8 disabled/></td>
+                     <td>
+                     <select name="Quantity14"  id="Quantity14" onchange="sub(this,14);" disabled>
+                        <script type="text/javascript">
+                            quantity();
+                        </script>
+                     </select>
+                     </td>
+                     <td><input type="text" name="Amount14" id="Amount14" size=10 class=numbers  value="0.00"  onchange="calculate();" disabled  /></td>
+                  </tr>               
+                  <tr>
+                     <td>15.
+                     <select id="desc15" name="desc15" onchange="display(this,15);">
+                        <optgroup label="Coffee Powder">
+                        <option>Select a Coffee Powder</option>
+                        <option value="48.00">Instant Coffee Classico Taste x1/250g</option>
+                        <option value="58.50">Ground Espresso Classico Coffee Medium Roast x1/250g</option>
+                        <option value="58.50">Ground Moka Classico Coffee Medium Roast x1/250g </option>
+                        <option value="58.50">Ground Espresso Intenso Coffee Dark Roast x1/250g</option>
+                        <option value="58.50">Ground Decaffeinated Coffee Medium Roast x1/250g</option>
+                     </select>
+                     </td>
+                     <td><input type="text" name="Price15" id="Price15" readonly size=8 disabled /></td>
+                     <td>
+                     <select name="Quantity15"  id="Quantity15" onchange="sub(this,15);" disabled>
+                        <script type="text/javascript">
+                            quantity();
+                        </script>
+                     </select>
+                     </td>
+                     <td><input type="text" name="Amount15" id="Amount15" size=10 class=numbers  value="0.00"  onchange="calculate();" disabled  /></td>
+                  </tr>
+                  <td>Total Amount: <input type="text" name="totalAmount" id="totalAmount" size=10 class=numbers  value="0.00"  onchange="calculate();" disabled  /></td>
+               </div>
+                </table>
+                <div class="col-50">      
+                  <h2>Delivery Details</h2>
+                  <label for="Ddate"><i class="delivery-date"></i>Delivery Date: </label>
+                  <input type="date" id="Ddate" name="Ddate" required>
+                  <label for="timeslot"><i class="time-slot"></i> Time Slot: </label>
+                  <select id="tmeslot" name="timeslot" required>
+                      <option value=''>Please select a time slot</option>
+                      <option value='1'>06:30AM - 09:30AM</option>
+                      <option value='2'>11:00AM - 02:00PM</option>
+                      <option value="3">03:30PM - 06:30PM</option>
+                  </select>  
+                <div class="col-25">
+                    <h2>Billing Address</h2>
+                    <label for="fname"><i class="user-name"></i> Full Name</label>
+                    <input type="text" id="fname" name="fullname" placeholder="James Lee Xiao Fang" required pattern="^[a-zA-Z]{3,}$">
+                    <label for="email"><i class="email-address"></i> Email</label>
+                    <input type="text" id="email" name="email" required  
+                      placeholder="james@example.com" 
+                      pattern="^[\w]{1,}[\w.+-]{0,}@[\w-]{2,}([.][a-zA-Z]{2,}|[.][\w-]{2,}[.][a-zA-Z]{2,})$">
+                    <label for="adr"><i class="home-address"></i> Address</label>
+                    <input type="text" id="adr" name="address" placeholder="43-C, blok 2, Jalan Shah Alam " required>
+                    <label for="city"><i class="place-city"></i> City(town)</label>
+                    <input type="text" id="city" name="city" placeholder="Selangor" required pattern="^[a-zA-Z]{1,}$">
+        
+                    <div class="row">
+                      <div class="col-25">
+                        <label for="state">State(area)</label>
+                        <input type="text" id="state" name="state" placeholder="kl" required pattern="^[a-zA-Z]{1,}$">
+                      </div>
+                      <div class="col-25">
+                        <label for="zip">Zip Code</label>
+                        <input type="text" id="zip" name="zip" required placeholder="10001"  pattern="\d{5}$"/>
+                      </div>
+                    </div>
+                </div>
+                    <input type="submit" value="Continue to payment" class="btn">
+                </div>
+            </div>
+        </form>
+    </div> 
+    <footer>
+      <div class="leftcolumn">
+        <h2 class="insideleft">3L's Cafe</h2>
+        <h1 class="insideleft">CONTACT US</h1>
+        <div class="insideleft">
+        <img id="telicon" src="tel icon.jpg"/><a  id="tellink" href="tel:+60169757158">0123456789</a>
+        </div>
+        <div class="insideleft">
+        <img  id="facebookicon" src="facebook icon.png"/><a  id="facebooklink" href="https://www.facebook.com/3L'scafe/">3L's cafe</a>
+        </div>
+        <div class="insideleft">
+        <img id="emailicon" src="emailicon.png"/><a id="emaillink" href="mailto:example@gmail.com">3L's cafe@gmail.com</a> 
+        </div>
+      </div>
+        <div class="middlecolumn">
+        <h1 id="h1membership" >MY MEMBERSHIP ACCOUNT</h1>
+        <a href="member.html">Create an account</a> <a href="member.html">Log in</a> 
+        <a href="reservation.html" id="reservationstyle"><b>RESERVATION</b></a> 
+      </div>
+        <div class="rightcolumn">
+        <h1 id="h1policies" >POLICIES</h1>
+        <a href="PrivaryPolicy.html">Privacy Policy</a> <a href="#">Terms of Use</a> 
+        </div>
+  
+  </footer>
+</body>
+</html>

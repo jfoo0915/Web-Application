@@ -1,0 +1,226 @@
+.booking_icon,.contentmmbr,nav , header, .menu_header, footer {
+    display: none;
+}
+
+/*Food Menu Printing Styles*/
+.salad, .sandwich, .soup, .pasta, .rice, .snacks
+{
+    margin: 10px;
+    float: none;
+    display: block;
+    width: 100%;
+    height: 500px;
+    page-break-after: always;
+}
+
+.soup {
+    width: 30%
+}
+
+ .salad h2, .sandwich h2, .soup h2, .pasta h2,  .rice h2, .snacks h2
+{
+    text-align: center;
+    color:black;
+    width: 100%;
+    float: none;
+}
+
+#caesar_salad, #mango_avocado_salad, #smoked_duck_salad, #egg_mayo_sandwich, #bacon_egg_sandwich, #cheese_ham_sandwich, #smoked_salmon_sandwich, #mushroom_aglio_olio, #seafood_aglio_olio, #chicken_bolognese, #meatball_bolognese,#chicken_pesto, #bacon_carbonara, #french_fries, #fried_chicken,#curry_rice_bowl, #beef_rice_bowl, #salmon_rice_bowl
+{
+    float: left;
+    width: 30%;
+    height: auto;
+    margin: 10px;
+}
+
+#meatball_bolognese, #curry_rice_bowl, #smoked_salmon_sandwich,#french_fries{
+    clear:left;
+}
+
+.salad img, .sandwich img, .soup img, .pasta img, .rice img, .snacks img {
+    display: block;
+    margin-left:-80px;
+    margin-bottom: -50px;
+    max-width: 350px;
+    max-height: 250px;
+    transform: scale(0.5, 0.5);
+    page-break-inside: avoid;
+}
+
+.sandwich  h3, .salad  h3, .soup h3, .burger  h3, .pasta  h3, .rice h3, .snacks  h3
+{
+    font-weight: bold;
+    color:rgb(5, 42, 110);
+}
+
+
+/*Beverage Menu Printing Styles */
+div.hot, div.cold {
+    clear: both;
+    display: block;
+    width: 100%;
+    margin: 20px auto;
+}
+
+div.hot > h2, div.cold > h2 {
+    display: block;
+    margin: 5px auto;
+    padding:10px;
+    font-family: Verdana, 'Times New Roman', Times, serif;
+    color:black;
+}
+
+div.coffee, div.tea, div.others, div.non-coffee, div.smoothies, div.juice, div.sparkling {
+    display: block;
+    width: 50%;
+    height: auto;
+    text-align: left;
+    float: left;
+    margin: 10px 5px 5px 5px;
+    padding:  10px 5%;
+    font-family: Verdana, 'Times New Roman', Times, serif;
+}
+
+div.cold, div.tea, div.smoothies {
+    page-break-before: always ;
+    clear: left;
+    float: none;
+}
+
+div.non-coffee {
+    float:right;
+}
+
+div.sparkling {
+    width: 300px;
+}
+
+dt {
+    float: left;
+    clear: both;
+    padding: 10px;
+}
+
+span {
+    float: right;
+    text-align: left;
+    width: 60px;
+    padding: 10px;
+}
+
+figure {
+    clear:none !important;
+    float: left;
+    transform: scale(0.9,0.9);
+    margin-top: 10px;
+    margin-left: 10px;
+}
+
+figure#iced_americano{
+    width: 100px;
+}
+
+figure#iced_hojicha_latte {
+    clear:left !important;
+    width: 110px;
+   
+}
+
+figure#avocado_banana{
+   float: right;
+}
+
+figure#iced_americano figcaption, figure#iced_hojicha_latte figcaption {
+    width: 230px;
+}
+
+figure img {
+    display: block;
+}
+
+figure figcaption {
+    color:black;
+    letter-spacing: 1.5px;
+    font-family:'Times New Roman', monospace;
+    padding: 5px;
+    text-align: center;
+}
+
+/*Dessert Menu Printing Styles*/
+div.churros, div.cakes, div.waffle{
+    display: block;
+    float: left;
+    height: auto;
+    width: 60%;
+    height: auto;
+    margin: 5px;
+    padding: 13px;
+    font-family: Verdana, 'Times New Roman', Times, serif;
+}
+
+div.waffle{
+    float: left;
+    width: 80%;
+    display: block;
+    margin:20px 10%;
+}
+
+.waffle span {
+    float: right;
+    width: auto;
+}
+
+div.waffle_block {
+    clear: left;
+    display: block;
+    width: 120%;
+    height: auto;
+    margin: 20px auto 50% -20px;
+}
+
+figure.waffle_pic {
+    display: inline-block;
+    margin: 40px 0px !important; 
+    transform: scale(0.75,0.75) !important;       
+}
+
+div.waffle > h2, div.churros > h2, div.cakes > h2 {
+    padding: 10px;
+    font-family: Verdana, 'Times New Roman', Times, serif;
+    color:black;
+}
+
+div.churros, div.cakes, div#dessert_others {
+
+    page-break-before: always;
+    float: none !important;
+    display: inline-block !important;
+}
+
+div.churros {
+    width: 70% !important;
+}
+
+div.cakes {
+    margin:320px auto !important;
+    width: 80% !important;
+}
+
+.cakes figure {
+    margin-top: 100px;
+    margin-left: 20px;
+}
+
+#dessert_others {
+    margin-top:  -100px !important;
+}
+
+#creme_brulee {
+    margin-top: -40px !important;
+    margin-left: 100px !important;
+}
+
+
+
+
+

@@ -1,0 +1,169 @@
+#rvNfbmain{
+    border: 1px black solid;
+    clear: both;
+    height: 550px;
+    background-image: url(blue.jpg);
+    background-size: cover;
+    box-shadow: 10px 10px 10px;
+    box-sizing: border-box;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+h1{
+    font-size: 2em;
+    margin: 20px;
+    color: rgb(230, 230, 230);
+}
+p{
+    margin: 20px;
+    color: rgb(204, 204, 204);
+    font-size: 20px;
+}
+.rating{
+    width: 400px;
+    background: rgb(192, 192, 192);
+    padding: 20px 30px;
+    border: 1px solid black;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin: auto;
+    position: relative;
+}
+.rating .post{
+    display: none;
+    
+}
+.rating .text{
+    font-size: 20px;
+    color: black;
+    font-weight: bold;
+}
+.rating .edit{
+    position: absolute;
+    right: 10px;
+    top: 5px;
+    font-size: 14px;
+    color: black;
+    font-weight: bold;
+    cursor: pointer;
+}
+.rating .edit:hover{
+    text-decoration: underline;
+}
+
+.star-widget{
+    direction: rtl;
+
+}
+.rating .star-widget input{
+    display: none;
+
+}
+.star-widget label{
+    transition: all 0.2s ease;
+}
+.star-widget label:before{
+    content: "\2605";
+    
+    font-size: 50px;
+    display: inline-block;
+    top: 0;
+    left: 0;
+
+}
+.rating label:after{
+    content: "\2605";
+    
+    font-size: 50px;
+    display: inline-block;
+    top: 0;
+    left: 0;
+    color: rgb(192, 192, 192);
+    opacity: 0;
+
+}
+input:not(:checked) ~ label:hover,
+input:not(:checked) ~ label:hover ~ label{
+    color: rgb(0, 138, 230);
+}
+input:checked ~ label{
+    color: rgb(0, 138, 230);
+}
+.form
+{
+    direction:ltr;
+    text-align: center;
+}
+form header{
+    width: 100%;
+    font-size: 25px;
+    font-weight: bold;
+    margin: 5px 0 20px 0;
+    text-align: center;
+    transition: all 0.2s ease;
+}
+#star5:checked ~ form header:before{   
+    content: "It's bad! 😠";
+}
+#star4:checked ~ form header:before{   
+    content: "I don't like it 😟";
+}
+#star3:checked ~ form header:before{   
+    content: "It's look good 😄";
+}
+#star2:checked ~ form header:before{   
+    content: "I like it 😎";
+}
+#star1:checked ~ form header:before{   
+    content: "It's so awesome! 😍";
+}
+.rating form{
+    display: none;
+}
+input:checked ~ form{
+    display: block;
+}
+form .textarea{
+    height: 100px;
+    width: 100%;
+    overflow: hidden;
+}
+form .textarea textarea{
+    height: 100%;
+    width: 100%;
+    outline: none;
+    border: 1px solid black;
+    font-size: 14px;
+    resize: none;
+}
+form .btn{
+    height: 50px;
+    width: 100%;
+    margin: 15px 0;
+}
+
+form .btn button{
+    height: 100%;
+    width: 100%;
+    border: 1px solid black;
+    outline: none;
+    background: rgb(153, 153, 153);
+    color: black;
+    font-size: 14px;
+    font-weight: bold;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+form .btn button:hover{
+    background: rgb(0, 138, 230);
+}
+h1{
+    clear: both;
+}

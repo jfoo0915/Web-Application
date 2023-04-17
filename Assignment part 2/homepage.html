@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>3L's cafe</title>
+    <link href="homepage.css" rel="stylesheet"/>
+    <link href="overall.css" rel="stylesheet"/>
+   
+    <link rel="shortcut icon" type="image/jpg" href="htmlicon.png"/>
+</head>
+
+<body>
+    
+        <a href="member.html" class="contentmmbr" id="loginoption">Log in</a>
+        <a href="member.html" class="contentmmbr" id="signupoption">Sign up</a>
+   
+    <a href="reservation.html" class="booking_icon"><img src="bookicon.png" alt="booking icon" class="booking_icon"></a>
+    <header>
+    <div>
+    <a href="homepage.html"><img src="web 3Ls Cafe1.png" alt="3L's Cafe logo" /></a>
+    </div>
+    <nav class="list">
+        <ul>
+            <li><a href="homepage.html">Home</a></li>
+            <li class="menu_dropdown">
+                <a class="menu_dropdown_button" id="pointer" href="about.html">About us<span class="arrow">&#9660;</span></a>
+                <div class="menu_dropdown_content">
+                    <a href="gallery.html">Gallery</a>
+                    <a href="Promotion.html">Promotions</a>
+                    <a href="rvNfb.html">Review & Feedback</a>
+                </div>
+            </li>
+            <li class="menu_dropdown">
+                <button class="menu_dropdown_button" >Menu<span class="arrow">&#9660;</span></button>
+                <div class="menu_dropdown_content">
+                  <a href="food.html">Food</a>
+                  <a href="beverage.html">Beverage</a>
+                  <a href="dessert.html">Dessert</a>
+                </div>
+            </li>
+            <li class="menu_dropdown">
+                <button class="menu_dropdown_button" href="#">Specials<span class="arrow">&#9660;</span></button>
+                <div class="menu_dropdown_content">
+                    <a href="CBintro.html">Coffee Beans Intro</a>
+                    <a href="recipe.html">Recipe</a>
+                </div>
+            </li> 
+            <li class="menu_dropdown">
+                <button class="menu_dropdown_button" href="#">The Store<span class="arrow">&#9660;</span></button>
+                <div class="menu_dropdown_content">
+                    <a href="Addtocart.html">Add To Cart</a>
+                    <a href="Product delivery.html">Delivery</a>
+                    <a href="payment.html">Payment</a>
+                </div>
+            </li>
+         </ul>
+    </nav>
+</header>
+<div class="slider">
+    <div class="slides" >
+        <input type="radio" name="radio-btn" id="radio1"/>
+        <input type="radio" name="radio-btn" id="radio2"/>
+        <input type="radio" name="radio-btn" id="radio3"/>
+        <input type="radio" name="radio-btn" id="radio4"/>
+
+        <div class="slide first">
+           <a href="homepage.html"><img src="coffeeimg3.jpg" alt="image"/></a>
+        </div>
+        <div class="slide">
+           <a href="Promotion.html"><img src="coffeeimg1.jpg" alt="promotion image"/></a>
+        </div>
+        <div class="slide">
+            <a href="food.html"><img src="egg mayo sandwich.jpg" alt="sandwich image"/></a>
+        </div>
+        <div class="slide">
+            <a href="Product delivery.html"><img src="coffeeimg.png" alt="delivery image"/></a>
+        </div>
+        <div class="navigation-auto">
+            <div class="auto-btn1"></div>
+            <div class="auto-btn2"></div>
+            <div class="auto-btn3"></div>
+            <div class="auto-btn4"></div>
+        </div>
+    </div>
+    <div class="navigation-manual">
+        <label for="radio1" class="manual-btn"></label>
+        <label for="radio2" class="manual-btn"></label>
+        <label for="radio3" class="manual-btn"></label>
+        <label for="radio4" class="manual-btn"></label>
+    </div>
+    <script type="text/javascript"> 
+        var counter = 1;
+        setInterval(function(){
+            document.getElementById('radio' + counter).checked = true; counter++;
+            if(counter > 4){
+                counter = 1;
+            }
+        }, 5000);    
+    </script>
+    
+</div>
+<div id="sidecontainer" class="Lcontent">
+    <h2 id="workinghours">Business Hours</h2>
+    <div id="timetable" >
+    <table >
+    <tbody>
+        <tr>
+            <th>Day</th>
+            <th>Time</th>
+        </tr>
+        <tr>
+            <td>Monday</td>
+            <td>7:00-22:00</td>
+        </tr>
+        <tr>
+            <td>Tuesday</td>
+            <td>7:00-22:00</td>
+        </tr>
+        <tr>
+            <td>Wednesday</td>
+            <td>7:00-22:00</td>
+        </tr>
+        <tr>
+            <td>Thursday </td>
+            <td>7:00-22:00</td>
+        </tr>
+        <tr>
+            <td>Friday</td>
+            <td>7:00-22:00</td>
+        </tr>
+        <tr>
+            <td>Saturday</td>
+            <td>9:00-00:00</td>
+        </tr>
+        <tr>
+            <td>Sunday</td>
+            <td>9:00-00:00</td>
+        </tr>
+    </tbody>
+    </table>
+    </div>
+    <div id="remarkhours">
+    <h5>Remark: </h5><p>We'll inform here if we're closed</p>
+    </div>
+</div>
+
+
+<div id="banner" class="Lcontent">
+    
+    <img src="takeabreak.jpg" alt="image" usemap="#takeabreakmap"/>
+    <map name="takeabreakmap">
+        <area shape="poly" coords="188,147,238,281,307,253,257,120,198,141" alt="phone" href="gallery.html"/>
+        <area shape="poly" coords="112,170,18,209,53,300,177,300,112,170" alt="book" href="recipe.html"/>
+        <area shape="circle" coords="86,92,78" alt="coffee" href="beverage.html"/>
+        <area shape="poly" coords="174,0,223,120,447,26,447,0,174,0" alt="keyboard" href="rvNfb.html"/>
+        <area shape="default" alt="default" href="homepage.html"/>
+    </map>
+      
+    <h2 class="location">Take a break,</br><span> drink some coffee </span></br><span>Visit us for relaxing</br> and enjoying</span></h2>
+</div>
+
+<div>
+<div class="Lcontent" id="cafeaddress">
+<h3 >3L's Cafe</h3>
+<address >Kampus Utama, Jalan Genting Kelang, 53300 Kuala Lumpur, Wilayah Persekutuan Kuala Lumpur</address>
+</div>
+<div class="Lcontent" id="map">
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3983.534024663627!2d101.72677241380899!3d3.2162247976583402!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31cc3843bfb6a031%3A0x2dc5e067aae3ab84!2sTunku%20Abdul%20Rahman%20University%20College!5e0!3m2!1sen!2smy!4v1617797514189!5m2!1sen!2smy" width="280px" height="230px" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+</div>
+</div>
+
+<footer>
+    <div class="leftcolumn">
+      <h2 class="insideleft">3L's Cafe</h2>
+      <h1 class="insideleft">CONTACT US</h1>
+      <div class="insideleft">
+      <img id="telicon" src="tel icon.jpg"/><a  id="tellink" href="tel:+60169757158">0123456789</a>
+      </div>
+      <div class="insideleft">
+      <img  id="facebookicon" src="facebook icon.png"/><a  id="facebooklink" href="https://www.facebook.com/3L'scafe/">3L's cafe</a>
+      </div>
+      <div class="insideleft">
+      <img id="emailicon" src="emailicon.png"/><a id="emaillink" href="mailto:example@gmail.com">3L's cafe@gmail.com</a> 
+      </div>
+    </div>
+      <div class="middlecolumn">
+      <h1 id="h1membership" >MY MEMBERSHIP ACCOUNT</h1>
+      <a href="member.html">Create an account</a> <a href="member.html">Log in</a> 
+      <a href="reservation.html" id="reservationstyle"><b>RESERVATION</b></a> 
+    </div>
+      <div class="rightcolumn">
+      <h1 id="h1policies" >POLICIES</h1>
+      <a href="PrivaryPolicy.html">Privacy Policy</a> <a href="#">Terms of Use</a> 
+      </div>
+
+</footer>
+
+</body>
+</html>

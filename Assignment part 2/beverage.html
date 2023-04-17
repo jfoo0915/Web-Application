@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Beverage Menu</title>
+    <link href="overall.css" rel="stylesheet" type="text/css" />
+    <link href="menu.css" rel="stylesheet" type="text/css" />
+    <link href="menu_print.css" rel="stylesheet" type="text/css" media="print"/>
+    <link rel="shortcut icon" type="image/jpg" href="htmlicon.png"/>
+
+    <style media="screen">
+
+        div.hot, div.cold {
+            clear: both;
+            display: block;
+            width: 100%;
+            margin: 20px auto;
+        }
+
+        div.hot > h2, div.cold > h2 {
+            
+            display: block;
+            background-color:  rgb(24, 110, 145);
+            margin: 10px 15px;
+            padding:10px 20px;
+            font-family: Verdana, 'Times New Roman', Times, serif;
+            color:rgb(216, 246, 247);
+            border-radius: 30px;
+        }
+
+        div.coffee, div.tea, div.others, div.non-coffee, div.smoothies, div.juice, div.sparkling {
+            display: block;
+            width: 40%;
+            height: 320px;
+            text-align: left;
+            float: left;
+            margin: 20px 5%;
+            padding:  10px 5%;
+            font-family: Verdana, 'Times New Roman', Times, serif;
+        }
+
+        div.coffee h2, div.tea h2, div.others h2, div.non-coffee h2, div.smoothies h2, div.juice h2, div.sparkling h2 {
+            color:rgb(77, 136, 138);
+            border-radius: 10px;
+        }
+
+        dt {
+            float: left;
+            clear: both;
+            padding: 10px;
+        }
+
+        div.hot span , div.cold span {
+                float: right;
+                text-align: left;
+                width: 60px;
+                padding: 10px;
+            }
+    
+        figure {
+            float: left;
+            transition: all 1s;
+            transform: scale(1,1);
+            margin: 30px 40px;
+        }
+
+        figure img {
+            display: block;
+        }
+
+        figure figcaption {
+            color:white;
+            background-color:rgb(36, 135, 148);
+            letter-spacing: 1.5px;
+            font-family:'Times New Roman', monospace;
+            padding: 10px 0;
+            text-align: center;
+        }
+
+        figure:hover{
+               transform: scale(1.2, 1.2);
+               cursor: pointer;
+            }
+    </style>
+
+</head>
+<body>
+    <a href="member.html" class="contentmmbr" id="loginoption">Log in</a>
+        <a href="member.html" class="contentmmbr" id="signupoption">Sign up</a>
+    <a href="reservation.html" class="booking_icon"><img src="bookicon.png" alt="booking icon" class="booking_icon"></a>
+    <header>
+        <div>
+        <a href="homepage.html"><img src="web 3Ls Cafe1.png" alt="3L's Cafe logo" /></a>
+        </div>
+        <nav class="list">
+            <ul>
+                <li><a href="homepage.html">Home</a></li>
+                <li class="menu_dropdown">
+                    <a class="menu_dropdown_button" id="pointer" href="about.html">About us<span class="arrow">&#9660;</span></a>
+                    <div class="menu_dropdown_content">
+                        <a href="gallery.html">Gallery</a>
+                        <a href="Promotion.html">Promotions</a>
+                        <a href="rvNfb.html">Review & Feedback</a>
+                    </div>
+                </li>
+                <li class="menu_dropdown">
+                    <button class="menu_dropdown_button" >Menu<span class="arrow">&#9660;</span></button>
+                    <div class="menu_dropdown_content">
+                      <a href="food.html">Food</a>
+                      <a href="beverage.html">Beverage</a>
+                      <a href="dessert.html">Dessert</a>
+                    </div>
+                </li>
+                <li class="menu_dropdown">
+                    <button class="menu_dropdown_button" href="#">Specials<span class="arrow">&#9660;</span></button>
+                    <div class="menu_dropdown_content">
+                        <a href="CBintro.html">Coffee Beans Intro</a>
+                        <a href="recipe.html">Recipe</a>
+                    </div>
+                </li> 
+                <li class="menu_dropdown">
+                    <button class="menu_dropdown_button" href="#">The Store<span class="arrow">&#9660;</span></button>
+                    <div class="menu_dropdown_content">
+                        <a href="Addtocart.html">Add To Cart</a>
+                        <a href="Product delivery.html">Delivery</a>
+                        <a href="payment.html">Payment</a>
+                    </div>
+                </li>
+             </ul>
+        </nav>
+    </header>
+
+<div class="menu_header">
+    <div class="menu_slideshow_container">
+        <div class="menu_block" fade>
+            <div id="food_menu">
+            <a id="food" href="food.html">Food Menu</a>
+            </div>
+        </div>
+
+        <div class="menu_block" fade>
+            <div id="beverage_menu">
+                <a id="beverage" href="beverage.html">Beverage Menu</a>
+            </div>
+        </div>
+
+        <div class="menu_block" fade>
+            <div id="dessert_menu">
+                <a id="dessert" href="dessert.html">Dessert Menu</a> 
+            </div>
+        </div>
+    
+        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+    </div>
+
+    <div class="menu_dot_block" style="text-align:center">
+        <span class="menu_dot" onclick="currentSlide(1)"></span> 
+        <span class="menu_dot" onclick="currentSlide(2)"></span> 
+        <span class="menu_dot" onclick="currentSlide(3)"></span> 
+    </div>
+</div>
+        
+        <h1 class="menu">Beverage Menu</h1>
+        <div class="hot">
+        <h2>Hot drinks</h2>
+            <div class="coffee">
+            <h2>Coffee</h2>
+            <dl class="coffee">
+                <dt>Espresso</dt>
+                <span>RM 7</span>
+                <dt>Cappuccino</dt>
+                <span>RM 8</span>
+                <dt>Mocha</dt>
+                <span>RM 8</span>
+                <dt>Latte</dt>
+                <span>RM 8</span>
+                <dt>Caramel Macchiato</dt>
+                <span>RM 9</span>
+            </dl>
+            </div>
+
+            <figure> 
+                <img src="latte.jpg" alt="latte" width="250px" height=230px />
+            <figcaption>Latte</figcaption>
+            </figure>
+
+            <figure style="clear:left">
+                <img src="fruit tea.jpg" alt="fruit tea" width=270px; height=250px />
+                <figcaption>Fruit Tea</figcaption>
+            </figure>
+
+            <div class="tea">
+            <h2>Tea</h2>
+            <dl class="tea">
+                <dt>Earl Grey</dt>
+                <span>RM 7</span>
+                <dt>English Breakfast</dt>
+                <span>RM 7</span>
+                <dt>Peppermint</dt>
+                <span>RM 7</span>
+                <dt>Fruit Tea</dt>
+                <span>RM 12</span>
+            </dl>
+            </div>
+
+            <div class="others">
+            <h2>Others</h2>
+            <dl class="others">
+                <dt>Hot Chocolate</dt>
+                <span>RM 8</span>
+                <dt>Matcha Latte</dt>
+                <span>RM 9</span>
+                <dt>Honey Lemon</dt>
+                <span>RM 7</span>
+                <dt>Lemongrass Tea</dt>
+                <span>RM 7</span>
+                <dt>Lemon Tea</dt>
+                <span>RM 7</span>
+            </dl>
+            </div>
+            <figure>
+                <img src="matcha latte.jpg" alt="matcha latte" width=250px height=200px />
+                <figcaption>Matcha Latte</figcaption>
+            </figure>
+
+        </div>
+
+
+        <div class="cold">
+        <h2>Iced drinks</h2>
+
+            <div class="coffee" style="margin: 20px auto 30px auto;">
+            <h2>Iced Coffee</h2>
+            <dl class="coffee">
+                <dt>Iced Ammericano</dt>
+                <span>RM 9</span>
+                <dt>Iced Mocha</dt>
+                <span>RM 10</span>
+                <dt>Iced Cappucino</dt>
+                <span>RM 10</span>
+                <dt>Iced Latte</dt>
+                <span>RM 10</span>
+                <dt>Iced Hazelnut Latte</dt>
+                <span>RM 12</span>
+                <dt>Iced Caramel Latte</dt>
+                <span>RM 12</span>
+                <dt>Iced Caramel Macchiato</dt>
+                <span>RM 12</span>
+            </dl>
+            </div>
+            <figure id="iced_americano" style="margin-top:70px">
+                <img src="iced americano.jpg" alt="iced_americano" width=250px height=250px />
+                <figcaption>Iced Americano</figcaption>
+            </figure>
+
+            <figure id="iced_hojicha_latte" style="clear:left">
+                <img src="iced hojicha latte.jpg" alt="iced hojicha latte" width=250px; height=250px />
+                <figcaption>Iced Hojicha Latte</figcaption>
+            </figure>
+
+            <div class="non-coffee">
+                <h2>Non-Coffee Drinks</h2>
+                <dl class="non-coffee">
+                    <dt>Iced Chocolate</dt>
+                    <span>RM 10</span>
+                    <dt>Iced Hazelnut Chocolate</dt>
+                    <span>RM 12</span>
+                    <dt>Iced Peppermint Chocolate</dt>
+                    <span>RM 12</span>
+                    <dt>Iced Matcha Latte</dt>
+                    <span>RM 12</span>
+                    <dt>Iced Hojicha Latte</dt>
+                    <span>RM 12</span>
+                </dl>
+                </div>
+
+            <div class="smoothies">
+            <h2>Smoothies</h2>
+            <dl class="smoothies">
+                <dt>Oreo Smoothie</dt>
+                <span>RM 12</span>
+                <dt>Chocolate Banana Smoothie</dt>
+                <span>RM 13</span>
+                <dt>Avocado Banana Smoothie</dt>
+                <span>RM 13</span>
+                <dt>Yuzu Yogurt's Smoothie</dt>
+                <span>RM 13</span>
+                <dt>Mixed Berries Smoothie</dt>
+                <span>RM 13</span>
+            </dl>
+            </div>
+           
+            <figure id="avocado_banana">
+                <img src="avocado banana.jpg" alt="avocado banana smoothie" width=280px; height=230px />
+                <figcaption>Avocado Banana Smoothie</figcaption>
+            </figure>
+
+            <div class="juice">
+            <h2>Fresh Juice</h2>
+            <dl class="juice">
+                <dt>Apple Juice</dt>
+                <span>RM 10</span>
+                <dt>Orange Juice</dt>
+                <span>RM 10</span>
+                <dt>Watermelon Juice</dt>
+                <span>RM 10</span>
+            </div>
+            <figure>
+                <img src="mojito.jpg" alt="mojito" width=240px; height=260px />
+                <figcaption>Mojito Mocktail</figcaption>
+            </figure>    
+
+            <figure style="clear:left; margin: 5px 0px 5px 5px">
+                <img src="yuzu lemonade.jpg" alt="yuzu lemonade" width=210px; height=290px />
+                <figcaption>Yuzu Lemonade</figcaption>
+            </figure>      
+
+            <div class="sparkling" style= "margin: 5px 0px">
+                <h2>Sparkling Drinks</h2>
+            <dl class="sparkling">
+                <dt>Lemonade</dt>
+                <span>RM 12</span>
+                <dt>Yuzu Lemonade</dt>
+                <span>RM 12</span>
+                <dt>Grapefruit Soda</dt>
+                <span>RM 12</span>
+                <dt>Mojito Mocktail</dt>
+                <span>RM 12</span>
+                <dt>Citrus Espresso</dt>
+                <span>RM 12</span>
+            </dl>
+            </div>
+
+            <figure style= "margin: 10px 0px">
+                <img src="grapefruit soda.jpg" alt="grapefruit soda"  width=220px height=260px />
+                <figcaption>Grapefruit Soda</figcaption>
+            </figure>
+
+            <div class="others">
+                <h2>Others</h2>
+            <dl class="others">
+                <dt>Iced Lemon Tea</dt>
+                <span>RM 8</span>
+                <dt>Iced Grapefruit Tea</dt>
+                <span>RM 10</span>
+            </dl>
+            </div>
+
+            <figure style="float: left">
+                <img src="grapefruit tea.jpg" alt="iced grapefruit tea" width=220px height=290px />
+                <figcaption>Iced Grapefruit Tea</figcaption>
+            </figure>
+    </div>
+    <script>
+        var slideIndex = 2;
+        showSlides(slideIndex);
+
+
+        function plusSlides(n) {
+        showSlides(slideIndex += n);
+        }
+
+        function currentSlide(n) {
+        showSlides(slideIndex = n);
+        }
+
+        function showSlides(n) 
+        {
+            var i;
+            var slides = document.getElementsByClassName("menu_block");
+            var dots = document.getElementsByClassName("menu_dot");
+            if (n > slides.length) 
+            {
+                slideIndex = 1;
+            }    
+            if (n < 1) 
+            {
+                slideIndex = slides.length
+            }
+            for (i = 0; i < slides.length; i++) 
+            {
+                slides[i].style.display = "none";  
+            }
+            for (i = 0; i < dots.length; i++) 
+            {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+            slides[slideIndex-1].style.display = "block";  
+            dots[slideIndex-1].className += " active";
+        }
+    </script>
+    <footer>
+        <div class="leftcolumn">
+          <h2 class="insideleft">3L's Cafe</h2>
+          <h1 class="insideleft">CONTACT US</h1>
+          <div class="insideleft">
+          <img id="telicon" src="tel icon.jpg"/><a  id="tellink" href="tel:+60169757158">0123456789</a>
+          </div>
+          <div class="insideleft">
+          <img  id="facebookicon" src="facebook icon.png"/><a  id="facebooklink" href="https://www.facebook.com/3L'scafe/">3L's cafe</a>
+          </div>
+          <div class="insideleft">
+          <img id="emailicon" src="emailicon.png"/><a id="emaillink" href="mailto:example@gmail.com">3L's cafe@gmail.com</a> 
+          </div>
+        </div>
+          <div class="middlecolumn">
+          <h1 id="h1membership" >MY MEMBERSHIP ACCOUNT</h1>
+          <a href="member.html">Create an account</a> <a href="member.html">Log in</a> 
+          <a href="reservation.html" id="reservationstyle"><b>RESERVATION</b></a> 
+        </div>
+          <div class="rightcolumn">
+          <h1 id="h1policies" >POLICIES</h1>
+          <a href="PrivaryPolicy.html">Privacy Policy</a> <a href="#">Terms of Use</a> 
+          </div>
+    
+    </footer>
+    
+</body>
+</html>

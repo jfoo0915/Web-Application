@@ -1,0 +1,61 @@
+@charset "utf-8";
+
+
+body{
+   background: rgb(185, 207, 248);
+}
+
+p, h1, h2 {
+  color: rgb(0, 0, 0); 
+  clear: both;
+}
+
+table.programs {
+   border: 50px outset rgb(36, 45, 179); 
+   border-collapse: collapse;
+   font-family: Arial, Verdana, sans-serif;
+   width: 100%;
+   height: 100%;
+}
+tr{
+   height: 30px;
+}
+
+th, td{
+   color:  rgb(0, 0, 0);
+   border: 1px solid rgb(255, 255, 255);
+   vertical-align: top;
+   padding: 5px;
+   text-align: center;
+   
+}
+
+col.timeColumn{
+   background-color:  rgb(185, 207, 248);
+}
+
+col.wDayColumns{
+   background-color: rgb(185, 207, 248);
+}
+
+thead{
+   color: rgb(10, 10, 10);
+   background-color: rgb(185, 207, 248);
+   ;
+}
+
+thead th:first-of-type{
+   background-color: rgb(185, 207, 248);
+   
+}
+
+thead th:nth-of-type(7), thead th:nth-of-type(8){
+   background-color: rgb(185, 207, 248);
+   
+}
+
+tfoot{
+
+   background-color: rgb(185, 207, 248);
+
+}

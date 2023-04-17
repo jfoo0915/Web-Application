@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+   
+   <meta charset="utf-8" />
+   <title>Promotion</title>
+   <link href="promotion table.css" rel="stylesheet" />
+   <script src="countdowndate_time.js" type="text/javascript"  defer> </script>
+   <link href="overall.css" rel="stylesheet"/>
+   <link rel="shortcut icon" type="image/jpg" href="htmlicon.png"/>
+   
+<style>
+
+* {
+  box-sizing: border-box;
+}
+
+</style>
+
+</head>
+
+<body>
+   <a href="member.html" class="contentmmbr" id="loginoption">Log in</a>
+        <a href="member.html" class="contentmmbr" id="signupoption">Sign up</a>
+   <a href="reservation.html" class="booking_icon"><img src="bookicon.png" alt="booking icon" class="booking_icon"></a>
+   <header>
+      <div>
+      <a href="homepage.html"><img src="web 3Ls Cafe1.png" alt="3L's Cafe logo" /></a>
+      </div>
+      <nav class="list">
+          <ul>
+              <li><a href="homepage.html">Home</a></li>
+              <li class="menu_dropdown">
+                  <a class="menu_dropdown_button" id="pointer" href="about.html">About us<span class="arrow">&#9660;</span></a>
+                  <div class="menu_dropdown_content">
+                      <a href="gallery.html">Gallery</a>
+                      <a href="Promotion.html">Promotions</a>
+                      <a href="rvNfb.html">Review & Feedback</a>
+                  </div>
+              </li>
+              <li class="menu_dropdown">
+                  <button class="menu_dropdown_button" >Menu<span class="arrow">&#9660;</span></button>
+                  <div class="menu_dropdown_content">
+                    <a href="food.html">Food</a>
+                    <a href="beverage.html">Beverage</a>
+                    <a href="dessert.html">Dessert</a>
+                  </div>
+              </li>
+              <li class="menu_dropdown">
+                  <button class="menu_dropdown_button" href="#">Specials<span class="arrow">&#9660;</span></button>
+                  <div class="menu_dropdown_content">
+                     <a href="CBintro.html">Coffee Beans Intro</a>
+                      <a href="recipe.html">Recipe</a>
+                  </div>
+              </li> 
+              <li class="menu_dropdown">
+                  <button class="menu_dropdown_button" href="#">The Store<span class="arrow">&#9660;</span></button>
+                  <div class="menu_dropdown_content">
+                      <a href="Addtocart.html">Add To Cart</a>
+                      <a href="Product delivery.html">Delivery</a>
+                      <a href="payment.html">Payment</a>
+                  </div>
+              </li>
+           </ul>
+      </nav>
+  </header>
+   
+  <section>
+   <div style="font-family:verdana; text-align:left">
+      <h1 id="countdown">Promotion Time</h1>
+      <h1 id="currentdate">  </h1>
+     
+
+<center><img src="workers day.jpg" alt="worker's day" width="200" height="200" />
+<img src="MidAutumn Festival.jpg" alt="mid-autumn Festival" width="200" height="200" />
+<p>Days Left :
+<span id="dLeft"></span> Days &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+Days Left :  
+<span id="d1Left"></span> Days </p>
+</center>       
+ 
+
+
+<table class="programs">
+   <colgroup>
+   <col class= "timeColumn"/>
+   <col class= "wDayColumns" span= "5" />
+   <col class= "wEndColumns" span= "2" />
+   </colgroup>
+
+   <thead>
+       <tr>
+      <th colspan="9">Business hours</th>
+      </tr>
+      <tr>
+      <th colspan="6">Weekday</th>
+      <th colspan="3">Weekend</th>
+      </tr>
+   <tr>     
+      <th>Time</th>
+      <th>Mon</th>
+      <th>Tue</th>
+      <th>Wed</th>
+      <th>Thu</th>
+      <th>Fri</th>
+      <th>Time</th>
+      <th>Sat</th>
+      <th>Sun</th>
+   </tr>
+   </thead>
+   <tfoot>
+      <tr>
+         <td colspan="9">*Weekdays & Weekend promotion discount 10% , Special holiday can get 20% DISCOUNT !!!</td>
+      </tr>
+   </tfoot>
+   <tbody>
+      <tr>
+         <th>7:00 AM</th>
+         <td rowspan="1" colspan="5"></td>
+         <th>9:00 AM</th>
+         <td rowspan="2" colspan="2">*Break Fast Time</td>
+      </tr>
+      <tr>
+         <th>8:00 AM</th>
+         <td rowspan="3" colspan="5">*Break Fast Time</td>
+         <th>10.00 AM</th>
+      </tr>
+      <tr>
+         <th>9:00 AM</th>
+         <th>11.00 AM</th>
+         <td rowspan="1" colspan="2"></td>
+      </tr>
+      <tr>
+         <th>10:00 AM</th>
+         <th>12:00 PM</th>
+         <td rowspan="4" colspan="2">*Super Lunch Time</td>
+      </tr>
+      <tr>
+         <th>11:00 AM</th>
+         <td rowspan="1" colspan="5"></td>
+         <th>13:00 PM</th>
+      </tr>
+      <tr>
+         <th>12:00 PM</th>
+         <td rowspan="4" colspan="5">*Super Lunch Time</td>
+         <th>14:00 PM</th>
+      </tr>
+      <tr>
+         <th>13:00 PM</th>
+         <th>15:00 PM</th>
+      </tr>
+      <tr>
+         <th>14:00 PM </th>
+         <th>16:00 PM </th>
+         <td rowspan="2" colspan="2"></td>
+      </tr>
+      <tr>
+         <th>15:00 PM </th>
+         <th>17:00 PM </th>
+      </tr>
+      <tr>
+         <th>16:00 PM </th>
+         <td rowspan="2" colspan="5"></td>
+         <th>18:00 PM </th>
+         <td rowspan="4" colspan="2">*Dinner</td>
+      </tr>
+      <tr>
+         <th>17:00 PM </th>
+         <th>19:00 PM </th>
+      </tr>
+      <tr>
+         <th>18:00 PM </th>
+         <td rowspan="4" colspan="5">*Dinner</td>
+         <th>20:00 PM </th>
+      </tr>
+      <tr>
+         <th>19:00 PM </th>
+         <th>21:00 PM </th>
+      </tr>
+      <tr>
+         <th>20:00 PM </th>
+         <th>22:00 PM </th>
+         <td rowspan="3" colspan="2"></td>
+      </tr>
+      <tr>
+         <th>21:00 PM </th>
+         <th>23:00 PM </th>
+      </tr>     
+      <tr>
+         <th>22:00 PM </th>
+         <td rowspan="1" colspan="5"></td>
+         <th>00:00 AM</th>
+      </tr>                     
+
+
+   </tbody>
+
+</table>
+
+</section>
+ 
+
+</body>
+<footer>
+   <div class="leftcolumn">
+     <h2 class="insideleft">3L's Cafe</h2>
+     <h1 class="insideleft">CONTACT US</h1>
+     <div class="insideleft">
+     <img id="telicon" src="tel icon.jpg"/><a  id="tellink" href="tel:+60169757158">0123456789</a>
+     </div>
+     <div class="insideleft">
+     <img  id="facebookicon" src="facebook icon.png"/><a  id="facebooklink" href="https://www.facebook.com/3L'scafe/">3L's cafe</a>
+     </div>
+     <div class="insideleft">
+     <img id="emailicon" src="emailicon.png"/><a id="emaillink" href="mailto:example@gmail.com">3L's cafe@gmail.com</a> 
+     </div>
+   </div>
+     <div class="middlecolumn">
+     <h1 id="h1membership" >MY MEMBERSHIP ACCOUNT</h1>
+     <a href="member.html">Create an account</a> <a href="member.html">Log in</a> 
+     <a href="reservation.html" id="reservationstyle"><b>RESERVATION</b></a> 
+   </div>
+     <div class="rightcolumn">
+     <h1 id="h1policies" >POLICIES</h1>
+     <a href="PrivaryPolicy.html">Privacy Policy</a> <a href="#">Terms of Use</a> 
+     </div>
+
+</footer>
+
+</html>

@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Food Menu</title>
+    <link href="overall.css" rel="stylesheet" type="text/css" />
+    <link href="menu.css" rel="stylesheet" type="text/css" />
+    <link href="menu_print.css" rel="stylesheet" type="text/css" media="print"/>
+    <link rel="shortcut icon" type="image/jpg" href="htmlicon.png"/>
+
+    <style media="screen">
+
+    /*Food Menu Styles*/
+    .salad, .sandwich, .soup, .pasta, .rice, .snacks
+    {
+        
+        clear:left;
+        display: block;
+        width: 100%;
+        float: left;
+        text-align: center;
+        margin: 20px auto 20px auto;
+        font-family: Verdana, 'Times New Roman', Times, serif;
+    }
+
+    .salad > h2, .sandwich > h2, .soup > h2, .pasta > h2,  .rice > h2, .snacks > h2
+    {
+        margin-left: 15px;
+        margin-right: 15px;
+        display: block;
+        padding: 5px;
+        font-weight: bold;
+        font-size: 1.8em;
+        color:rgb(216, 246, 247);
+        background-color: rgb(24, 110, 145);
+        border-radius: 30px;
+    }
+
+    #caesar_salad, #mango_avocado_salad, #smoked_duck_salad, #egg_mayo_sandwich, #bacon_egg_sandwich, #cheese_ham_sandwich, #smoked_salmon_sandwich, #mushroom_aglio_olio, #seafood_aglio_olio, #chicken_bolognese, #meatball_bolognese, #chicken_pesto, #bacon_carbonara, #french_fries, #fried_chicken, #curry_rice_bowl, #beef_rice_bowl, #salmon_rice_bowl
+    {
+        float: left;
+        display: block;
+        font-size: 15px;
+        width: 43%;
+        height: 400px;
+        margin: 20px 23px;
+        padding: 10px;
+    }
+
+    .sandwich  h3, .salad  h3, .soup h3, .burger  h3, .pasta  h3, .rice h3, .snacks  h3
+    {
+        font-weight: bold;
+        color:rgb(5, 42, 110);
+    }
+   </style>
+    
+</head>
+
+<body>
+    <a href="member.html" class="contentmmbr" id="loginoption">Log in</a>
+        <a href="member.html" class="contentmmbr" id="signupoption">Sign up</a>
+    <a href="reservation.html" class="booking_icon"><img src="bookicon.png" alt="booking icon" class="booking_icon"></a>
+    <header>
+        <div>
+        <a href="homepage.html"><img src="web 3Ls Cafe1.png" alt="3L's Cafe logo" /></a>
+        </div>
+        <nav class="list">
+            <ul>
+                <li><a href="homepage.html">Home</a></li>
+                <li class="menu_dropdown">
+                    <a class="menu_dropdown_button" id="pointer" href="about.html">About us<span class="arrow">&#9660;</span></a>
+                    <div class="menu_dropdown_content">
+                        <a href="gallery.html">Gallery</a>
+                        <a href="Promotion.html">Promotions</a>
+                        <a href="rvNfb.html">Review & Feedback</a>
+                    </div>
+                </li>
+                <li class="menu_dropdown">
+                    <button class="menu_dropdown_button" >Menu<span class="arrow">&#9660;</span></button>
+                    <div class="menu_dropdown_content">
+                      <a href="food.html">Food</a>
+                      <a href="beverage.html">Beverage</a>
+                      <a href="dessert.html">Dessert</a>
+                    </div>
+                </li>
+                <li class="menu_dropdown">
+                    <button class="menu_dropdown_button" href="#">Specials<span class="arrow">&#9660;</span></button>
+                    <div class="menu_dropdown_content">
+                        <a href="CBintro.html">Coffee Beans Intro</a>
+                        <a href="recipe.html">Recipe</a>
+                    </div>
+                </li> 
+                <li class="menu_dropdown">
+                    <button class="menu_dropdown_button" href="#">The Store<span class="arrow">&#9660;</span></button>
+                    <div class="menu_dropdown_content">
+                        <a href="Addtocart.html">Add To Cart</a>
+                        <a href="Product delivery.html">Delivery</a>
+                        <a href="payment.html">Payment</a>
+                    </div>
+                </li>
+             </ul>
+        </nav>
+    </header>
+<div class="menu_header">
+        <div class="menu_slideshow_container">
+            <div class="menu_block" fade>
+                <div id="food_menu">
+                <a id="food" href="food.html">Food Menu</a>
+                </div>
+            </div>
+
+            <div class="menu_block" fade>
+                <div id="beverage_menu">
+                    <a id="beverage" href="beverage.html">Beverage Menu</a>
+                </div>
+            </div>
+
+            <div class="menu_block" fade>
+                <div id="dessert_menu">
+                    <a id="dessert" href="dessert.html">Dessert Menu</a> 
+                </div>
+            </div>
+        
+            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+        </div>
+
+        <div style="text-align:center">
+            <span class="menu_dot" onclick="currentSlide(1)"></span> 
+            <span class="menu_dot" onclick="currentSlide(2)"></span> 
+            <span class="menu_dot" onclick="currentSlide(3)"></span> 
+        </div>
+    </div>
+
+        <h1 class="menu">Food Menu</h1>
+            <div class="salad">
+            <h2>Salad</h2>
+            <div id = "caesar_salad">
+                <img src="caesar salad.jpg" alt="caesar salad" width=350px height=250px/>
+                <h3>Caesar Salad</h3>
+                <p>Salad with lettuce, cherry tomato, hard-boiled egg, bread crumbs, and homemade caesar dressing</p>
+                <br/>RM 15
+            </div>
+            <div id = "mango_avocado_salad">
+                <img src="mango avocado salad.jpg" alt="mango avocado salad" width=350px height=250px/>
+                <h3>Avocado & Mango Salad</h3>
+                <p>Salad with baby romaine, avocado, mango, cherry tomato, almond flakes and homemade honey lemon dressing</p>
+                <br/>RM 15
+            </div>
+            <div id = "smoked_duck_salad">
+                <img src="smoked duck salad.jpg" alt="smoked duck salad" width=350px height=250px/>
+                <h3>Smoked Duck Salad</h3>
+                <p>Salad with smoked duck slices, lettuce, cherry tomato  and sesame dressing</p>
+                <br/>RM 18
+            </div>
+    </div>
+    <div class="sandwich">
+            <h2>Sandwich</h2>
+            <div id = "egg_mayo_sandwich">
+                <img src="egg mayo sandwich.jpg" alt="egg mayo sandwich" width=350px  height=250px />
+                <h3>Egg Mayo Sandwich</h3>
+                <p>Sandwich spreaded with eggs and mayonaise sauce</p>
+                <br/>RM 15
+            </div>
+            <div id = "bacon_egg_sandwich">
+                <img src="bacon and egg sandwich.jpg" alt="bacon and egg sandwich" width=350px  height=250px />
+                <h3>Bacon & Egg Sandwich</h3>
+                <p>Sandwich with sunny-side egg, bacons, avocado, tomato slices and lettuce</p>
+                <br/>RM 18
+            </div>
+            <div id = "cheese_ham_sandwich">
+                <img src="grilled ham and cheese sandwich.jpe" alt="grilled ham and cheese sandwich" width=350px  height=250px />
+                <h3>Grilled Cheese & Ham Sandwich</h3>
+                <p>Grilled sandwich with melted cheese and turkey ham</p>
+                <br/>RM 17
+            </div>
+            <div id = "smoked_salmon_sandwich">
+                <img src="smoked salmon sandwich.png" alt="smoked salmon sandwich" width=350px  height=250px />
+                <h3>Smoked Salmon Bagel Sandwich</h3>
+                <p>Bagel sandwich with smoked salmon and cream cheese</p>
+                <br/>RM 19
+            </div>
+    </div>
+    <div class="soup">
+            <h2>Soup</h2>
+            <img src="mushroom soup.jpg" alt="mushroom soups with garlic breads" width=350px height=250px />
+            <h3>Mushroom Soup with Garlic Bread</h3>
+            <p>Creamy mushroom soup comes with two slices of toasted garlic bread</p>
+            <br/>RM 15
+    </div>
+    <div class="pasta">
+            <h2>Pasta</h2>
+            <div id = "mushroom_aglio_olio">
+                <img src="mushroom aglio olio.jpg" alt="mushroom aglio olio" width=350px height=250px />
+                <h3>Mushroom Aglio Olio</h3>
+                <p>Vegan pasta with garlic and olive oil, added with sauteed mushrooms</p>
+                <br/>RM 18
+            </div>
+            <div id = "seafood_aglio_olio">
+                <img src="seafood aglio olio.jpg" alt="seafood aglio olio" width=350px height=250px />
+                <h3>Seafood Aglio Olio</h3>
+                <p>Seafood spaghetthi with garlic and olive oil<br/>(with prawns, mussels and squids)</p>
+                <br/>RM 22
+            </div>
+            <div id = "chicken_bolognese">
+                <img src="chicken bolognese.jpg" alt="chicken bolognese" width=350px height=250px />
+                <h3>Chicken Bolognese</h3>
+                <p>Spaghetthi with minced chicken cooked in tomato sauce</p>
+                <br/>RM 18
+            </div>
+            <div id = "meatball_bolognese">
+                <img src="meatball bolognese.jpg" alt="meatball bolognese" width=350px height=250px />
+                <h3>Meatball Bolognese</h3>
+                <p>Spaghetthi with beef meatballs cooked in tomato sauce</p>
+                <br/>RM 20
+            </div>
+            <div id = "chicken_pesto">
+                <img src="chicken pesto.jpg" alt="chicken pesto" width=350px height=250px />
+                <h3>Chicken Pesto</h3>
+                <p>Spaghetthi cooked in basil pesto sauce with grilled chicken</p>
+                <br/>RM 20
+            </div>
+            <div id = "bacon_carbonara">
+                <img src="bacon carbonara.jpg" alt="bacon carbonara" width=350px height=250px />
+                <h3>Bacon Carbonara</h3>
+                <p>Spaghetthi cooked in creamy carbonara sauce with bacon</p>
+                <br/>RM 20
+            </div>
+    </div>
+    <div class="rice">
+            <h2>Rice Bowl</h2>
+            <div id = "curry_rice_bowl">
+                <img src="curry rice bowl.jpg" alt="curry rice bowl" width=350px height=250px />
+                <h3>Japanese Curry Rice Bowl with Chicken Fillet</h3>
+                <p>Japanese rice topped with fried chicken fillet and rich japanese curry sauce.</p>
+                <br/>RM 20
+            </div>
+            <div id = "beef_rice_bowl">
+                <img src="beef rice bowl.jpg" alt="beef rice bowl" width=350px height=250px />
+                <h3>Japanese Beef Rice Bowl</h3>
+                <p>Japanese rice topped with sauteed beef slices and soft boiled egg.</p>
+                <br/>RM 22
+            </div>
+            <div id = "salmon_rice_bowl">
+                <img src="salmon rice bowl.jpg" alt="salmon rice bowl" width=350px height=250px />
+                <h3>Salmon Rice Bowl</h3>
+                <p>Japanese rice topped with grilled salmon in teriyaki sauce and vegetables</p>
+                <br/>RM 22
+            </div>
+    </div>
+    <div class="snacks">
+
+            <h2>Snacks</h2>
+            <div id = "french_fries">
+                <img src="french fries.jpg" alt="french fries" width=350px height=250px />
+                <h3>French Fries</h3>
+                <p>Crispy french fries with choice of tomato sauce or mayonaise sauce</p>
+                <br/>RM 8
+            </div>
+            <div id = "fried_chicken">
+                <img src="fried chicken.jpg" alt="fried chicken" width=350px height=250px />
+                <h3>Fried Chicken (6pcs)</h3>
+                <p>Crispy Korean style fried chicken in garlic soy sauce</p>
+                <br/>RM 16
+            </div>
+    </div>
+    <script>
+        var slideIndex = 1;
+        showSlides(slideIndex);
+
+
+        function plusSlides(n) {
+        showSlides(slideIndex += n);
+        }
+
+        function currentSlide(n) {
+        showSlides(slideIndex = n);
+        }
+
+        function showSlides(n) 
+        {
+            var i;
+            var slides = document.getElementsByClassName("menu_block");
+            var dots = document.getElementsByClassName("menu_dot");
+            if (n > slides.length) 
+            {
+                slideIndex = 1;
+            }    
+            if (n < 1) 
+            {
+                slideIndex = slides.length
+            }
+            for (i = 0; i < slides.length; i++) 
+            {
+                slides[i].style.display = "none";  
+            }
+            for (i = 0; i < dots.length; i++) 
+            {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+            slides[slideIndex-1].style.display = "block";  
+            dots[slideIndex-1].className += " active";
+        }
+    </script>
+    <footer>
+        <div class="leftcolumn">
+          <h2 class="insideleft">3L's Cafe</h2>
+          <h1 class="insideleft">CONTACT US</h1>
+          <div class="insideleft">
+          <img id="telicon" src="tel icon.jpg"/><a  id="tellink" href="tel:+60169757158">0123456789</a>
+          </div>
+          <div class="insideleft">
+          <img  id="facebookicon" src="facebook icon.png"/><a  id="facebooklink" href="https://www.facebook.com/3L'scafe/">3L's cafe</a>
+          </div>
+          <div class="insideleft">
+          <img id="emailicon" src="emailicon.png"/><a id="emaillink" href="mailto:example@gmail.com">3L's cafe@gmail.com</a> 
+          </div>
+        </div>
+          <div class="middlecolumn">
+          <h1 id="h1membership" >MY MEMBERSHIP ACCOUNT</h1>
+          <a href="member.html">Create an account</a> <a href="member.html">Log in</a> 
+          <a href="reservation.html" id="reservationstyle"><b>RESERVATION</b></a> 
+        </div>
+          <div class="rightcolumn">
+          <h1 id="h1policies" >POLICIES</h1>
+          <a href="PrivaryPolicy.html">Privacy Policy</a> <a href="#">Terms of Use</a> 
+          </div>
+    
+    </footer>
+    
+</body>
+</html>

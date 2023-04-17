@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <title>Recipe</title>
+    <link href="overall.css" rel="stylesheet" type="text/css" />
+    <link href="recipe_print.css" rel="stylesheet" type="text/css" media="print"/>
+    <link rel="shortcut icon" type="image/jpg" href="htmlicon.png"/>
+
+    <style media="screen">
+
+        body {
+            background-color: rgb(220, 241, 245);
+        }
+        
+        /*Heading style*/
+        h1#recipe{
+            clear: left;
+            display: block;
+            margin: 50px auto 0px auto;
+            padding: 10px;
+            text-align:center;
+            color:darkblue;
+            line-height: 1.5;
+          
+        }
+        p {
+            display:block; 
+            text-align:center;
+            font-size: 20px; 
+            color:darkblue; 
+            margin: 10px 50px;
+        }
+
+        p span.arrow{
+            content: "\2B9F";
+            margin: 0px 10px;
+        }
+
+        /*Accordion Style*/
+        .recipe_accordion {
+            background-color: rgb(186, 231, 247);
+            color: rgb(13, 64, 112);
+            cursor: pointer;
+            padding: 18px;
+            width: 90%;
+            margin: 5px 30px 5px 45px;
+            border-radius: 50px;
+            border: none;
+            outline:none;
+            text-align: center;
+            font-size: 16px;
+            font-weight: bold;
+            text-shadow: white 0px 0px 5px;
+            transition: background-color 0.4s,font-size 0.5s ease-in-out;
+
+        }
+
+        .active, .recipe_accordion:hover {
+        background-color: rgb(233, 244, 245); 
+        font-size: 30px;
+        }
+
+
+        /*Recipe video caption*/
+        ::cue {
+            background-color: rgb(231, 161, 69);
+            color: white;
+            font: 1.3em serif;
+            padding: 5px;
+        }
+
+        ::cue(.main) {
+            text-shadow: black 3px 3px 0px;
+            color: white;
+            font: 1.5em serif;
+        }
+
+        /*Recipe Design & Layout*/
+        figure h2 {
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            display:inline-block;
+        }
+
+        div.recipe {
+            display: none;
+            overflow: hidden;
+            float: left;
+            background-color:rgb(201, 231, 228);
+            color: teal;
+            margin: 20px;
+            padding: 10px;
+            font-family: 'Times New Roman', Times, serif;
+            line-height: 1.5;
+            width: inherit;
+            height: max-content;
+        }
+
+        figure img {
+            display: block;
+        }
+
+        /*Video Display Style*/
+        video {
+            display: block;
+            margin: 10px;
+            width: 90%;
+            max-height: 500px;
+            max-width: 400px;
+        }
+
+        /*<Watch Video> Button Style*/
+        button.vid {
+            display: inline-block;
+            background-color: cadetblue;
+            color: white;
+            border-radius: 10px;
+            border: 0px;
+            outline: none;
+            word-spacing: 1.5px;
+            letter-spacing: 1px;
+            margin: 0px 10px;
+        }
+
+        button.vid:hover {
+            cursor:pointer;
+            color: cadetblue;
+            background-color: white;
+        }
+
+        /*space before footer*/
+        footer{
+            margin-top: 150px;
+        }
+
+
+     
+    </style>
+    </head>
+
+    <body>
+        <a href="member.html" class="contentmmbr" id="loginoption">Log in</a>
+        <a href="member.html" class="contentmmbr" id="signupoption">Sign up</a>
+        <a href="reservation.html" class="booking_icon"><img src="bookicon.png" alt="booking icon" class="booking_icon"></a>
+        <header>
+            <div>
+            <a href="homepage.html"><img src="web 3Ls Cafe1.png" alt="3L's Cafe logo" /></a>
+            </div>
+            <nav class="list">
+                <ul>
+                    <li><a href="homepage.html">Home</a></li>
+                    <li class="menu_dropdown">
+                        <a class="menu_dropdown_button" id="pointer" href="about.html">About us<span class="arrow">&#9660;</span></a>
+                        <div class="menu_dropdown_content">
+                            <a href="gallery.html">Gallery</a>
+                            <a href="Promotion.html">Promotions</a>
+                            <a href="rvNfb.html">Review & Feedback</a>
+                        </div>
+                    </li>
+                    <li class="menu_dropdown">
+                        <button class="menu_dropdown_button" >Menu<span class="arrow">&#9660;</span></button>
+                        <div class="menu_dropdown_content">
+                          <a href="food.html">Food</a>
+                          <a href="beverage.html">Beverage</a>
+                          <a href="dessert.html">Dessert</a>
+                        </div>
+                    </li>
+                    <li class="menu_dropdown">
+                        <button class="menu_dropdown_button" href="#">Specials<span class="arrow">&#9660;</span></button>
+                        <div class="menu_dropdown_content">
+                            <a href="CBintro.html">Coffee Beans Intro</a>
+                            <a href="recipe.html">Recipe</a>
+                        </div>
+                    </li> 
+                    <li class="menu_dropdown">
+                        <button class="menu_dropdown_button" href="#">The Store<span class="arrow">&#9660;</span></button>
+                        <div class="menu_dropdown_content">
+                            <a href="Addtocart.html">Add To Cart</a>
+                            <a href="Product delivery.html">Delivery</a>
+                            <a href="payment.html">Payment</a>
+                        </div>
+                    </li>
+                 </ul>
+            </nav>
+        </header>
+
+        <h1 id="recipe">Recipe</h1>
+
+        <p><span class="arrow">&#11167</span>Here are the simple recipes of the popular products from our menu. Try out this at home!<span class="arrow">&#11167</span></p>
+
+        <button class="recipe_accordion">Yuzu Espresso Tonic</button>
+            <div class="recipe">
+            <figure id="yuzu_espresso_tonic">
+                <h2>Yuzu Espresso Tonic</h2>
+                <button class="vid" onclick="myRecipe1()">Watch Video</button>
+                <div id="video1" style="display:none">
+                <video controls>
+                    <source src="Yuzu Espresso Tonic Recipe.mp4" type="video/mp4" />
+                    <track kind="captions" src="yuzu_espresso_tonic.vtt" label="Yuzu Espresso Tonic Recipe Captions" default />
+                    <p>Your browser must support HTML5 in order to play this video</p>
+                </video>
+                </div>
+
+                <img src="yuzu espresso tonic.jpg" alt="yuzu lemonade" width="400px"/>
+
+                <figcaption>   
+                    <h3>Ingredients:</h3>
+                    <ul>
+                    <li>1 Tablespoon of Honey Yuzu Marmalade</li>
+                    <li>A shot of espresso (30 ml)</li>
+                    <li>A can of Tonic Water</li>
+                    <li>Ice cubes</li>
+                    </ul>
+                    <h3>Procedure:</h3>
+                    <ol>
+                        <li>Add Honey Yuzu marmalade to a glass.</li>
+                        <li>Add in ice cubes.</li>
+                        <li>Pour in soda water to fill up 3/4 of the glass.</li>
+                        <li>Add in a shot of espresso.</li>
+                        <li>Stir it and enjoy!</li>
+                    </ol>
+                </figcaption>
+            </figure>
+        </div>
+
+        <button class="recipe_accordion">Taiwanese Hot Fruit Tea</button>
+        <div class="recipe" >
+            <figure id="fruit_tea">
+                <h2>Taiwanese Hot Fruit Tea</h2>
+                    <button class="vid" onclick="myRecipe2()">Watch Video</button>
+                    <div id="video2" style="display:none">
+                    <video controls>
+                        <source src="Hot Fruit Tea Recipe.mp4" type="video/mp4"/>
+                        <track kind="captions" src="hot_fruit_tea.vtt" label="Hot Fruit Tea Recipe Captions" default />
+                        <p>Your browser must support HTML5 in order to play this video</p>
+                    </video>
+                </div>
+                
+                <img src="fruit tea.jpg" alt="fruit tea" width="400px"/>
+
+                <figcaption>   
+                    <h3>Ingredients:</h3>
+                    <ul>
+                    *Note: You can use any fruit you like
+                    <li>apple</li>
+                    <li>orange</li>
+                    <li>lemon</li>
+                    <li>strawberries</li>
+                    <li>1/3 cup orange juice</li>
+                    <li>hot water</li>
+                    </ul>
+                    <h3>Procedure:</h3>
+                    <ol>
+                        <li>Cut the fruits into small pieces.</li>
+                        <li>Heat the orange juice.</li>
+                        <li>Prepare a tea pot and put all the fruits into it.</li>
+                        <li>Add hot water and let it steep for at least 15 minutes.</li>
+                        <li>Serve and enjoy!</li>
+                    </ol>
+                </figcaption>
+            </figure>
+        </div>
+            
+        <button class="recipe_accordion">Mushroom Aglio Olio</button>
+        <div class="recipe">
+            <figure id="mushroom_aglio_olio">
+                <h2>Mushroom Aglio Olio</h2>
+                <button class="vid" onclick="myRecipe3()">Watch Video</button>
+                <div id="video3" style="display:none">
+                 <video controls>
+                     <source src="Mushroom Spaghetti Aglio Olio Recipe.mp4" type="video/mp4" />
+                    <track kind="captions" src="mushroom_aglio_olio.vtt" label="Mushroom Aglio Olio Recipe Captions" default />
+                     <p>Your browser must support HTML5 in order to play this video</p>
+                 </video>
+                 </div>
+                <img src="mushroom aglio olio.jpg" alt="mushroom aglio olio" width="400px"/>
+
+            <figcaption>   
+            <h3>Ingredients:</h3>
+            <ul>
+            <li>250g of uncooked spaghetti</li>
+            <li>200g mushrooms cleaned and cut in half</li>
+            <li>6 cloves of garlic, thinly sliced</li>
+            <li>2 tablespoon of olive oil</li>
+            <li>1 teaspoon of butter</li>
+            <li>1/4 teaspoon of chili flakes</li>
+            <li>grounded black pepper (to taste)</li>
+            <li>pinch of salt (or to taste)</li>
+            <li>1 1/2 teaspoon of dried Italian Parsley</li>
+            </ul>
+            <h3>Procedure:</h3>
+            <ol>
+                <li>Boil spaghetti in salted water follow the instructions on the package until al dente.</li>
+                <li>While waiting, heat a tablespoon of olive oil in a pan, add mushrooms and sauteed till golden brown.</li>
+                <li>Then, move the mushrooms at one side of the pan. Add the remaining olive oil, garlic and chilli flakes, sauteed for about 1 minutes.</li>
+                <li>Then, add spaghetti, butter, parsley, black pepper and salt. Toss well and make sure all the ingredients are mixed well together with the spaghetti.</li></li>
+                <li>Serve on a plate.</li>
+            </ol>
+            </figcaption>
+            </figure>
+        </div>
+
+
+        <button class="recipe_accordion">Egg Mayo Sandwich</button>
+        <div class="recipe" height="max-content">
+                <figure id="egg_mayo_sandwich">
+                    <h2>Egg Mayo Sandwich</h2>
+                    <button class="vid" onclick="myRecipe4()">Watch Video</button>
+
+                    <div id="video4" style="display:none" >
+                        <video controls>
+                            <source src="Egg Mayo Sandwich Recipe.mp4" type="video/mp4" />
+                            <p>Your browser must support HTML5 in order to play this video</p>
+                            <track kind="captions" src="egg_mayo_sadwich.vtt" label="Egg Mayo Sandwich Recipe Captions" default />
+                        </video>
+                    </div>
+    
+                    <img src="egg mayo sandwich.jpg" alt="egg mayo sandwich" width="400px"/>
+    
+                <figcaption>   
+                <h3>Ingredients:</h3>
+                <ul>
+                <li>3 eggs</li>
+                <li>4 slices of bread</li>
+                <li>salted butter</li>
+                <li>1/4 teaspoon of sugar</li>
+                <li>1/4 teaspoon of salt</li>
+                <li>freshly ground black pepper (to taste)</li>
+                <li>2 teaspoon of milk</li>
+                <li>2 tablespoon of Japanese mayonnaise</li>
+                </ul>
+                <h3>Procedure:</h3>
+                <ol>
+                    <li>Put the eggs in a pot of water and bring to boil.  Cook the eggs for 12 minutes once boiling.</li>
+                    <li>Then, transfer the eggs to iced water and let to cool down.</li>
+                    <li>Peeled the eggs then transfer to a bowl and mashed the eggs with a fork.</li>
+                    <li>Add sugar, salt, ground black pepper, a tablespoon of milk, and mayonnaise. Mixed well. Taste and add more salt or black pepper if needed.</li>
+                    <li>Spread the butter on both sides of breads and spread the egg salad evenly on one side of the bread.</li>
+                    <li>Put the other slice of bread on top and place the sandwich between two plates. Set aside for 5 minutes.</li>
+                    <li>Cut off all sides of the breads and cut the sandwich into half.</li>
+                    <li>The egg mayo sandwich is ready to serve.</li>
+                </ol>
+                </figcaption>
+                </figure>
+
+        </div>
+      
+
+        <script>
+
+            /*Recipe accordion */
+            var acc = document.getElementsByClassName("recipe_accordion");
+            var i;
+
+            for (i = 0; i < acc.length; i++) 
+            {
+                acc[i].addEventListener("click", function() 
+                {
+                    this.classList.toggle("active");
+                    var recipe = this.nextElementSibling;
+                    if (recipe.style.display === "block") 
+                    {
+                    recipe.style.display = "none";
+                    } 
+                    else 
+                    {
+                    recipe.style.display = "block";
+                    }
+                });
+            }
+
+            /*Recipe Video Button*/
+           function myRecipe1() 
+           {
+             var a = document.getElementById("video1");
+                if (a.style.display === "none") 
+                {
+                    a.style.display = "block";
+                } 
+                else 
+                { 
+                    a.style.display = "none";
+                }
+            }
+
+            function myRecipe2() 
+            {
+                var b = document.getElementById("video2");
+                if (b.style.display === "none") 
+                {
+                    b.style.display = "block";
+                } 
+                else
+                {
+                    b.style.display = "none";
+                }
+           }
+
+           
+           function myRecipe3() 
+            {
+                var c = document.getElementById("video3");
+                if (c.style.display === "none") 
+                {
+                    c.style.display = "block";
+                } 
+                else
+                {
+                    c.style.display = "none";
+                }
+           }
+
+           
+           function myRecipe4() 
+            {
+                var d = document.getElementById("video4");
+                if (d.style.display === "none") 
+                {
+                    d.style.display = "block";
+                } 
+                else
+                {
+                   d.style.display = "none";
+                }
+           }
+        </script>
+        <footer>
+            <div class="leftcolumn">
+              <h2 class="insideleft">3L's Cafe</h2>
+              <h1 class="insideleft">CONTACT US</h1>
+              <div class="insideleft">
+              <img id="telicon" src="tel icon.jpg"/><a  id="tellink" href="tel:+60169757158">0123456789</a>
+              </div>
+              <div class="insideleft">
+              <img  id="facebookicon" src="facebook icon.png"/><a  id="facebooklink" href="https://www.facebook.com/3L'scafe/">3L's cafe</a>
+              </div>
+              <div class="insideleft">
+              <img id="emailicon" src="emailicon.png"/><a id="emaillink" href="mailto:example@gmail.com">3L's cafe@gmail.com</a> 
+              </div>
+            </div>
+              <div class="middlecolumn">
+              <h1 id="h1membership" >MY MEMBERSHIP ACCOUNT</h1>
+              <a href="member.html">Create an account</a> <a href="member.html">Log in</a> 
+              <a href="reservation.html" id="reservationstyle"><b>RESERVATION</b></a> 
+            </div>
+              <div class="rightcolumn">
+              <h1 id="h1policies" >POLICIES</h1>
+              <a href="PrivaryPolicy.html">Privacy Policy</a> <a href="#">Terms of Use</a> 
+              </div>
+        
+        </footer>
+        
+            
+    </body>
+</html>

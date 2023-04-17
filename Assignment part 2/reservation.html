@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Reservation : 3L's cafe</title>
+    <link href="homepage.css" rel="stylesheet"/>
+    <link href="overall.css" rel="stylesheet"/>
+    <link href="reservation.css" rel="stylesheet"/>
+   
+    <link rel="shortcut icon" type="image/jpg" href="htmlicon.png"/>
+    <script type="text/javascript">
+        
+            
+        function showform(){
+          
+              document.getElementById("bookcontainer").style.display = "none";
+              document.getElementById("form").style.display = "block";
+          
+        }
+    </script>
+   
+</head>
+
+<body>
+    <a href="member.html" class="contentmmbr" id="loginoption">Log in</a>
+        <a href="member.html" class="contentmmbr" id="signupoption">Sign up</a>
+    <a href="reservation.html" class="booking_icon"><img src="bookicon.png" alt="booking icon" class="booking_icon"></a>
+    <header>
+        <div>
+        <a href="homepage.html"><img src="web 3Ls Cafe1.png" alt="3L's Cafe logo" /></a>
+        </div>
+        <nav class="list">
+            <ul>
+                <li><a href="homepage.html">Home</a></li>
+                <li class="menu_dropdown">
+                    <a class="menu_dropdown_button" id="pointer" href="about.html">About us<span class="arrow">&#9660;</span></a>
+                    <div class="menu_dropdown_content">
+                        <a href="gallery.html">Gallery</a>
+                        <a href="Promotion.html">Promotions</a>
+                        <a href="rvNfb.html">Review & Feedback</a>
+                    </div>
+                </li>
+                <li class="menu_dropdown">
+                    <button class="menu_dropdown_button" >Menu<span class="arrow">&#9660;</span></button>
+                    <div class="menu_dropdown_content">
+                      <a href="food.html">Food</a>
+                      <a href="beverage.html">Beverage</a>
+                      <a href="dessert.html">Dessert</a>
+                    </div>
+                </li>
+                <li class="menu_dropdown">
+                    <button class="menu_dropdown_button" href="#">Specials<span class="arrow">&#9660;</span></button>
+                    <div class="menu_dropdown_content">
+                        <a href="CBintro.html">Coffee Beans Intro</a>
+                        <a href="recipe.html">Recipe</a>
+                    </div>
+                </li> 
+                <li class="menu_dropdown">
+                    <button class="menu_dropdown_button" href="#">The Store<span class="arrow">&#9660;</span></button>
+                    <div class="menu_dropdown_content">
+                        <a href="Addtocart.html">Add To Cart</a>
+                        <a href="Product delivery.html">Delivery</a>
+                        <a href="payment.html">Payment</a>
+                    </div>
+                </li>
+             </ul>
+        </nav>
+    </header>
+<div class="bookmaincontainer" >
+<div id="bookcontainer">
+<form id="tablebooking" action="#" method="GET">
+<div class="seat" >
+    <button type="button" value="2 seats" id="seat2" ></button> 
+</div>
+<div class="seat">
+    <button type="button" value="3 seats" id="seat3" ></button>
+</div>
+<div class="seat">
+    <button type="button" value="4 seats" id="seat4" ></button>
+</div>
+<div class="seat">
+    <button type="button" value="6 seats" id="seat6" ></button>
+</div>
+</form>
+<input type="submit" value="Submit" id="submit1" onclick="showform()"/>
+</div>
+
+
+<div id="form">
+    <div class="reservation" id="timedetails">
+        <div id="inner">
+        <h2>business hours</h2>
+        <h3>Monday-Friday</h3>
+        <p>7:00-22:00</p>
+        <h3>Saturday-Sunday</h3>
+        <p>9:00-00:00</p>
+        <hr/>
+        <h4>Contact Us: 012346789</h4>
+        </div>
+    </div>
+    <div class="reservation" id="bookingform">
+        <h2>reservation</h2>
+        <form id="reservationform" action="#" method="GET">
+        <div class="divcontainer" id="divday">
+            <label for="day">Select a date*:</label>
+            <input type="date" name="day" id="day" required/>
+        </div>
+        <div class="divcontainer" id="divtime">
+            <label for="time">Select a time*:</label>
+            <input type="time" name="time" id="time" required/>
+        </div>
+        <div class="divcontainer" id="divcustname">
+            <label for="custname" >Your name*:</label>
+            <input type="text" name="custname" id="custname" required/>
+        </div>
+        <div class="divcontainer" id="divcustpohone">
+            <label for="custphone" >Your contact number*:</label>
+            <input type="tel" name="custphone" id="custphone" required/>
+        </div>
+        
+        <input type="submit" name="submitbtn" class="divcontainer" id="submitbtn" value="Book Table"/>
+        </form>
+      
+        
+    </div>
+</div>
+</div>
+
+
+
+<footer>
+    <div class="leftcolumn">
+      <h2 class="insideleft">3L's Cafe</h2>
+      <h1 class="insideleft">CONTACT US</h1>
+      <div class="insideleft">
+      <img id="telicon" src="tel icon.jpg"/><a  id="tellink" href="tel:+60169757158">0123456789</a>
+      </div>
+      <div class="insideleft">
+      <img  id="facebookicon" src="facebook icon.png"/><a  id="facebooklink" href="https://www.facebook.com/3L'scafe/">3L's cafe</a>
+      </div>
+      <div class="insideleft">
+      <img id="emailicon" src="emailicon.png"/><a id="emaillink" href="mailto:example@gmail.com">3L's cafe@gmail.com</a> 
+      </div>
+    </div>
+      <div class="middlecolumn">
+      <h1 id="h1membership" >MY MEMBERSHIP ACCOUNT</h1>
+      <a href="member.html">Create an account</a> <a href="member.html">Log in</a> 
+      <a href="reservation.html" id="reservationstyle"><b>RESERVATION</b></a> 
+    </div>
+      <div class="rightcolumn">
+      <h1 id="h1policies" >POLICIES</h1>
+      <a href="PrivaryPolicy.html">Privacy Policy</a> <a href="#">Terms of Use</a> 
+      </div>
+
+</footer>
+
+</body>
+</html>

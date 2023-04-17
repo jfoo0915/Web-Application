@@ -1,0 +1,10 @@
+.booking_icon,.contentmmbr,nav , header, .menu_header, footer, video, button, p {
+    display: none;
+}
+.recipe {
+    display: block;
+}
+
+#fruit_tea, #mushroom_aglio_olio, #egg_mayo_sandwich {
+    page-break-before: always;
+}

@@ -1,0 +1,368 @@
+<html>
+
+   <head>
+      
+         <meta charset="utf-8" />
+         <link href="overall.css" rel="stylesheet"/>
+         <title>Add to Cart</title>
+         <link href="cart table.css" rel="stylesheet" />
+         <link rel="shortcut icon" type="image/jpg" href="htmlicon.png"/>
+         <style>
+            .numbers {text-align:right;}
+            .numbers1 {text-align:right; }   
+                   
+            </style>
+            <script type="text/javascript" src="order.js" defer></script>
+                        <script type="text/javascript">
+
+                           function display(obj,num)
+                        {
+                           var price = "Price" + num;
+                           var qty = "Quantity" + num;
+                           var amount = "Amount" + num;  
+                        
+                           if(obj.selectedIndex != 0)
+                           {	
+
+                                    document.getElementById(price).value=obj.value;
+                                    document.getElementById(qty).disabled = false;
+                                    document.getElementById(qty).value = "0";
+                                    document.getElementById(amount).value = "0.00";
+                                    document.getElementById(qty).focus();
+                                    calculate();
+                           }
+                        
+                        }
+
+                        function sub(obj,num)
+                        {
+                           var amount = "Amount" + num;
+                           var price = "Price" + num;
+                           
+                        
+                           var qty = obj.selectedIndex;
+                           if (qty>0){
+                           var subtotal = parseFloat(document.getElementById(price).value)*qty;
+                              document.getElementById(amount).value = subtotal.toFixed(2);
+                              calculate();
+                           }
+                           else {
+                              var subtotal =parseFloat(0);
+                              document.getElementById(amount).value = subtotal.toFixed(2);
+                              calculate();
+                           
+                           }
+
+                        }
+
+
+                        function calculate()
+                        {
+                           
+                           var amt1, amt2, amt3, amt4, amt5, total;	
+                           amt1 = parseFloat(document.getElementById('Amount1').value);
+                           amt2 = parseFloat(document.getElementById('Amount2').value);
+                           amt3 = parseFloat(document.getElementById('Amount3').value); 
+                           amt4 = parseFloat(document.getElementById('Amount4').value); 
+                           amt5 = parseFloat(document.getElementById('Amount5').value); 
+
+                           total = amt1 + amt2 + amt3 + amt4 + amt5 ;
+
+                           document.getElementById('totalAmount').value=total.toFixed(2);
+                        }
+
+
+                        function quantity()
+                        {
+                           for(num=0; num<=10 ; num++)
+                           {
+                              document.write("<option>" + num + "</option>");
+                           }
+                        
+                        }
+
+
+                        function cancelorder()
+                        {
+                              if (confirm("Are you sure you want to cancel this order?") == 1)
+                              {
+                                 document.book.reset();
+                                 window.location.reload();
+                              }
+                        }
+
+                     </script>   
+   </head>
+
+   <body>
+      <a href="member.html" class="contentmmbr" id="loginoption">Log in</a>
+        <a href="member.html" class="contentmmbr" id="signupoption">Sign up</a>
+      <a href="reservation.html" class="booking_icon"><img src="bookicon.png" alt="booking icon" class="booking_icon"></a>
+      <header>
+         <div>
+         <a href="homepage.html"><img src="web 3Ls Cafe1.png" alt="3L's Cafe logo" /></a>
+         </div>
+         <nav class="list">
+             <ul>
+                 <li><a href="homepage.html">Home</a></li>
+                 <li class="menu_dropdown">
+                     <a class="menu_dropdown_button" id="pointer" href="about.html">About us<span class="arrow">&#9660;</span></a>
+                     <div class="menu_dropdown_content">
+                         <a href="gallery.html">Gallery</a>
+                         <a href="Promotion.html">Promotions</a>
+                         <a href="rvNfb.html">Review & Feedback</a>
+                     </div>
+                 </li>
+                 <li class="menu_dropdown">
+                     <button class="menu_dropdown_button" >Menu<span class="arrow">&#9660;</span></button>
+                     <div class="menu_dropdown_content">
+                       <a href="food.html">Food</a>
+                       <a href="beverage.html">Beverage</a>
+                       <a href="dessert.html">Dessert</a>
+                     </div>
+                 </li>
+                 <li class="menu_dropdown">
+                     <button class="menu_dropdown_button" href="#">Specials<span class="arrow">&#9660;</span></button>
+                     <div class="menu_dropdown_content">
+                        <a href="CBintro.html">Coffee Beans Intro</a>
+                         <a href="recipe.html">Recipe</a>
+                     </div>
+                 </li> 
+                 <li class="menu_dropdown">
+                     <button class="menu_dropdown_button" href="#">The Store<span class="arrow">&#9660;</span></button>
+                     <div class="menu_dropdown_content">
+                         <a href="Addtocart.html">Add To Cart</a>
+                         <a href="Product delivery.html">Delivery</a>
+                         <a href="payment.html">Payment</a>
+                     </div>
+                 </li>
+              </ul>
+         </nav>
+     </header>
+
+      <form name="coffee" id="coffee"  action="Addtocart.html" method="get">  
+         
+         <table>
+         <tr>
+         <td colspan=5>
+         <h1>Coffee Powder Order</h1></td>
+         </tr>
+         <tr>
+            <th>
+         <img src="Instant Coffee  Classico Taste.png" alt="Instant Coffee – Classico Taste" width="250" height="250" />
+         <img src="Ground Espresso Classico Coffee.png" alt="Ground Espresso Classico Coffee" width="250" height="250" />
+         <img src="Ground Moka Classico Coffee  Medium Roast.png" alt="Ground Moka Classico Coffee Medium Roast" width="250" height="250" />
+         <img src="Ground Espresso Intenso Coffee  Dark Roast.png" alt="Ground Espresso Intenso Coffee – Dark Roast" width="250" height="250" />
+         <img src="Ground Decaffeinated Coffee  Medium Roast.png" alt="Ground Decaffeinated Coffee" width="250" height="250" />
+         </th>
+         </tr>
+
+         </table>
+
+         <table id="ordertb">
+            <tr>
+            
+               <td><b>Order Form</b></td>
+               <td style ="text-align:right" colspan="4">Order Date:
+               <input type="text" name="date" id="date" size="10"  class="numbers" disabled/></td>
+            </tr>
+   
+            <tr>
+               <td>Customer Name:
+               <input type="text" name="customerName" id="customerName" size="30"  required/></td>
+            </tr>
+   
+            <tr>
+               <td>Phone No: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+               <input type="tel" name="telNo" id="telNo" size="20"  required/>
+            </td>
+            </tr>
+         <tr id="heading">
+            <th>Types of coffee</th>
+                  <th>Price</th>
+                  <th>Quantity</th>
+                  <th>Amount(RM)</th>
+         </tr>
+         <tr>
+            <td>1.
+            <select id="desc1" name="desc1" onchange="display(this,1);">
+               <option>Select an item</option>
+
+               <option value="48.00">Instant Coffee Classico Taste x1/250g</option>
+
+               <option value="58.50">Ground Espresso Classico Coffee Medium Roast x1/250g</option>
+
+               <option value="58.50">Ground Moka Classico Coffee Medium Roast x1/250g </option>
+
+               <option value="58.50">Ground Espresso Intenso Coffee Dark Roast x1/250g</option>
+
+               <option value="58.50">Ground Decaffeinated Coffee Medium Roast x1/250g</option>
+
+            </select>
+            </td>
+            <td><input type="text" name="Price1" id="Price1" readonly size=8 /></td>
+            <td>
+            <select name="Quantity1"  id="Quantity1" onchange="sub(this,1);" disabled>
+               <script type="text/javascript">
+                  quantity();
+               </script>
+            </select>
+            </td>
+            <td><input type="text" name="Amount1" id="Amount1" size=10 class=numbers  value="0.00"  onchange="calculate();" disabled  /></td>
+         </tr>
+
+         <tr>
+            <td>2.
+            <select id="desc2" name="desc2" onchange="display(this,2);">
+               <option>Select an item</option>
+
+               <option value="48.00">Instant Coffee Classico Taste x1/250g</option>
+
+               <option value="58.50">Ground Espresso Classico Coffee Medium Roast x1/250g</option>
+
+               <option value="58.50">Ground Moka Classico Coffee Medium Roast x1/250g </option>
+
+               <option value="58.50">Ground Espresso Intenso Coffee Dark Roast x1/250g</option>
+
+               <option value="58.50">Ground Decaffeinated Coffee Medium Roast x1/250g</option>
+
+            </select>
+            </td>
+            <td><input type="text" name="Price1" id="Price2" readonly size=8 /></td>
+            <td>
+            <select name="Quantity2"  id="Quantity2" onchange="sub(this,2);" disabled>
+               <script type="text/javascript">
+                  quantity();
+               </script>
+            </select>
+            </td>
+            <td><input type="text" name="Amount2" id="Amount2" size=10 class=numbers  value="0.00"  onchange="calculate();" disabled  /></td>
+         </tr>
+
+         <tr>
+            <td>3.
+            <select id="desc3" name="desc3" onchange="display(this,3);">
+               <option>Select an item</option>
+
+               <option value="48.00">Instant Coffee Classico Taste x1/250g</option>
+
+               <option value="58.50">Ground Espresso Classico Coffee Medium Roast x1/250g</option>
+
+               <option value="58.50">Ground Moka Classico Coffee Medium Roast x1/250g </option>
+
+               <option value="58.50">Ground Espresso Intenso Coffee Dark Roast x1/250g</option>
+
+               <option value="58.50">Ground Decaffeinated Coffee Medium Roast x1/250g</option>
+
+            </select>
+            </td>
+            <td><input type="text" name="Price3" id="Price3" readonly size=8 /></td>
+            <td>
+            <select name="Quantity3"  id="Quantity3" onchange="sub(this,3);" disabled>
+               <script type="text/javascript">
+                  quantity();
+               </script>
+            </select>
+            </td>
+            <td><input type="text" name="Amount3" id="Amount3" size=10 class=numbers  value="0.00"  onchange="calculate();" disabled  /></td>
+         </tr>
+
+         <tr>
+            <td>4.
+            <select id="desc4" name="desc4" onchange="display(this,4);">
+               <option>Select an item</option>
+
+               <option value="48.00">Instant Coffee Classico Taste x1/250g</option>
+
+               <option value="58.50">Ground Espresso Classico Coffee Medium Roast x1/250g</option>
+
+               <option value="58.50">Ground Moka Classico Coffee Medium Roast x1/250g </option>
+
+               <option value="58.50">Ground Espresso Intenso Coffee Dark Roast x1/250g</option>
+
+               <option value="58.50">Ground Decaffeinated Coffee Medium Roast x1/250g</option>
+
+            </select>
+            </td>
+            <td><input type="text" name="Price4" id="Price4" readonly size=8 /></td>
+            <td>
+            <select name="Quantity4"  id="Quantity4" onchange="sub(this,4);" disabled>
+               <script type="text/javascript">
+                  quantity();
+               </script>
+            </select>
+            </td>
+            <td><input type="text" name="Amount4" id="Amount4" size=10 class=numbers  value="0.00"  onchange="calculate();" disabled  /></td>
+         </tr>
+
+         <tr>
+            <td>5.
+            <select id="desc5" name="desc5" onchange="display(this,5);">
+               <option>Select an item</option>
+
+               <option value="48.00">Instant Coffee Classico Taste x1/250g</option>
+
+               <option value="58.50">Ground Espresso Classico Coffee Medium Roast x1/250g</option>
+
+               <option value="58.50">Ground Moka Classico Coffee Medium Roast x1/250g </option>
+
+               <option value="58.50">Ground Espresso Intenso Coffee Dark Roast x1/250g</option>
+
+               <option value="58.50">Ground Decaffeinated Coffee Medium Roast x1/250g</option>
+
+            </select>
+            </td>
+            <td><input type="text" name="Price5" id="Price5" readonly size=8 /></td>
+            <td>
+            <select name="Quantity5"  id="Quantity5" onchange="sub(this,5);" disabled>
+               <script type="text/javascript">
+                  quantity();
+               </script>
+            </select>
+            </td>
+            <td><input type="text" name="Amount5" id="Amount5" size=10 class=numbers  value="0.00"  onchange="calculate();" disabled  /></td>
+         </tr>
+
+
+         <tr>
+            <td align=right width=360 colspan=3 >Total Amount:</td>
+            <td width=85><input type="text" name="totalAmount" id="totalAmount" size="10"   value="0.00"  disabled  /></td>
+         </tr>
+         </table>
+
+            <p style="text-align:right;">
+            <input type="Submit" value="Submit Order"  />
+            <input type="button" value="Cancel Order" onclick="cancelorder()"  />      
+            </p>
+            </form>
+
+        
+   </body>
+
+   <footer>
+      <div class="leftcolumn">
+        <h2 class="insideleft">3L's Cafe</h2>
+        <h1 class="insideleft">CONTACT US</h1>
+        <div class="insideleft">
+        <img id="telicon" src="tel icon.jpg"/><a  id="tellink" href="tel:+60169757158">0123456789</a>
+        </div>
+        <div class="insideleft">
+        <img  id="facebookicon" src="facebook icon.png"/><a  id="facebooklink" href="https://www.facebook.com/3L'scafe/">3L's cafe</a>
+        </div>
+        <div class="insideleft">
+        <img id="emailicon" src="emailicon.png"/><a id="emaillink" href="mailto:example@gmail.com">3L's cafe@gmail.com</a> 
+        </div>
+      </div>
+        <div class="middlecolumn">
+        <h1 id="h1membership" >MY MEMBERSHIP ACCOUNT</h1>
+        <a href="member.html">Create an account</a> <a href="member.html">Log in</a> 
+        <a href="reservation.html" id="reservationstyle"><b>RESERVATION</b></a> 
+      </div>
+        <div class="rightcolumn">
+        <h1 id="h1policies" >POLICIES</h1>
+        <a href="PrivaryPolicy.html">Privacy Policy</a> <a href="#">Terms of Use</a> 
+        </div>
+  
+  </footer>
+
+</html>

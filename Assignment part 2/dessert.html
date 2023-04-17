@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Dessert Menu</title>
+        <link href="overall.css" rel="stylesheet" type="text/css" />
+        <link href="menu.css" rel="stylesheet" type="text/css" />
+        <link href="menu_print.css" rel="stylesheet" type="text/css" media="print"/>
+        <link rel="shortcut icon" type="image/jpg" href="htmlicon.png"/>
+
+        <style media="screen">
+           
+            div.churros, div.cakes, div.others{
+                display: block;
+                float: left;
+                width: 500px;
+                height: auto;
+                margin: 5px;
+                padding: 13px;
+                font-family: Verdana, 'Times New Roman', Times, serif;
+            }
+
+            div.waffle{
+                float: left;
+                width: 80%;
+                display: block;
+                margin:20px 10%;
+                font-family: Verdana, 'Times New Roman', Times, serif;
+            }
+
+            .waffle span {
+                float:right;
+                width:auto;
+            }
+
+            div.waffle_block {
+                clear: left;
+                display: block;
+                width: 100%;
+                height: auto;
+                margin: 20px auto 50% auto;
+            }
+
+            figure.waffle_pic {
+                margin: 40px 35px;            
+            }
+
+            div.waffle > h2, div.churros > h2, div.cakes > h2, div.others > h2{
+                background-color: rgb(24, 110, 145);
+                padding: 10px 20px;
+                font-family: 'Frankdtn Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+                color:rgb(216, 246, 247);
+                border-radius: 30px;
+            }
+
+            dt {
+                float: left;
+                clear: both;
+                padding: 10px;
+            }
+
+            div.waffle span, div.churros span, div.cakes span, div.others span {
+                float: right;
+                text-align: left;
+                width: 60px;
+                padding: 10px;
+            }
+
+            figure {
+                float: left;
+                transition: all 1s;
+                transform: scale(1,1);
+                display:block;
+                margin: 50px 20px 40px 20px;
+            }
+
+            figure img{
+                display: block;
+            }
+
+            figure:hover{
+               transform: scale(1.2, 1.2);
+               cursor: pointer;
+            }
+
+            figure figcaption {
+                color:white;
+                background-color:rgb(36, 135, 148);
+                letter-spacing: 1.5px;
+                font-family:'Times New Roman', monospace;
+                padding: 10px 5px;
+                text-align: center;
+                line-height: 1.5;
+            }
+        </style>
+    </head>
+
+    <body>
+        <a href="member.html" class="contentmmbr" id="loginoption">Log in</a>
+        <a href="member.html" class="contentmmbr" id="signupoption">Sign up</a>
+        <a href="reservation.html" class="booking_icon"><img src="bookicon.png" alt="booking icon" class="booking_icon"></a>
+        <header>
+            <div>
+            <a href="homepage.html"><img src="web 3Ls Cafe1.png" alt="3L's Cafe logo" /></a>
+            </div>
+            <nav class="list">
+                <ul>
+                    <li><a href="homepage.html">Home</a></li>
+                    <li class="menu_dropdown">
+                        <a class="menu_dropdown_button" id="pointer" href="about.html">About us<span class="arrow">&#9660;</span></a>
+                        <div class="menu_dropdown_content">
+                            <a href="gallery.html">Gallery</a>
+                            <a href="Promotion.html">Promotions</a>
+                            <a href="rvNfb.html">Review & Feedback</a>
+                        </div>
+                    </li>
+                    <li class="menu_dropdown">
+                        <button class="menu_dropdown_button" >Menu<span class="arrow">&#9660;</span></button>
+                        <div class="menu_dropdown_content">
+                          <a href="food.html">Food</a>
+                          <a href="beverage.html">Beverage</a>
+                          <a href="dessert.html">Dessert</a>
+                        </div>
+                    </li>
+                    <li class="menu_dropdown">
+                        <button class="menu_dropdown_button" href="#">Specials<span class="arrow">&#9660;</span></button>
+                        <div class="menu_dropdown_content">
+                            <a href="CBintro.html">Coffee Beans Intro</a>
+                            <a href="recipe.html">Recipe</a>
+                        </div>
+                    </li> 
+                    <li class="menu_dropdown">
+                        <button class="menu_dropdown_button" href="#">The Store<span class="arrow">&#9660;</span></button>
+                        <div class="menu_dropdown_content">
+                            <a href="Addtocart.html">Add To Cart</a>
+                            <a href="Product delivery.html">Delivery</a>
+                            <a href="payment.html">Payment</a>
+                        </div>
+                    </li>
+                 </ul>
+            </nav>
+        </header>
+        <div class="menu_header">
+            <div class="menu_slideshow_container">
+                <div class="menu_block" fade>
+                    <div id="food_menu">
+                    <a id="food" href="food.html">Food Menu</a>
+                    </div>
+                </div>
+    
+                <div class="menu_block" fade>
+                    <div id="beverage_menu">
+                        <a id="beverage" href="beverage.html">Beverage Menu</a>
+                    </div>
+                </div>
+    
+                <div class="menu_block" fade>
+                    <div id="dessert_menu">
+                        <a id="dessert" href="dessert.html">Dessert Menu</a> 
+                    </div>
+                </div>
+            
+                <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                <a class="next" onclick="plusSlides(1)">&#10095;</a>
+    
+            </div>
+    
+            <div class="menu_dot_block" style="text-align:center">
+                <span class="menu_dot" onclick="currentSlide(1)"></span> 
+                <span class="menu_dot" onclick="currentSlide(2)"></span> 
+                <span class="menu_dot" onclick="currentSlide(3)"></span> 
+            </div>
+        </div>
+
+        <h1 class="menu">Dessert Menu</h1>
+        <div class="waffle">
+            <h2>Waffles</h2>
+            <dl>
+                <dt>Classic Waffle with Vanilla Ice Cream</dt>
+                <span>RM 13</span>
+                <dt>Dark Chocolate Waffle with Chocolate Ice Cream</dt>
+                <span>RM 16</span>
+                <dt>Pandan Banana Waffle with Coconut Ice Cream</dt>
+                <span>RM 18</span>
+                <dt>Charcoal Waffle with Oolong Ice Cream</dt>
+                <span>RM 18</span>
+                <dt>Boba Waffle with Brown Sugar Ice Cream</dt>
+                <span>RM 18</span>
+            </dl>
+        </div>
+        <div class="waffle_block">
+            <figure class="waffle_pic">
+                <img src="pandan banana waffle.jpg" alt="pandan banana waffle" width=250px; height=280px />
+                <figcaption>Pandan Banana Waffle </br>with Coconut Ice Cream</figcaption>
+            </figure>
+
+            <figure class="waffle_pic">
+                <img src="charcoal waffle.jpg" alt="charcoal waffle" width=250px; height=280px />
+                <figcaption>Charcoal Waffle <br/>with Oolong Ice Cream</figcaption>
+            </figure>
+
+            <figure class="waffle_pic">
+                <img src="boba waffle.jpg" alt="boba waffle" width=240px; height=280px />
+                <figcaption>Boba Waffle <br/>with Brown Sugar Ice Cream</figcaption>
+            </figure>
+        </div>
+
+        <div class="churros" style="width: 40%; min-width: 380px;clear:left;" >
+            <h2>Churros</h2>
+            <dl>
+            <dt>Churros with Nutella sauce</dt>
+            <span>RM 15</span>
+            <dt>Churros with Salted Caramel sauce</dt>
+            <span>RM 15</span>
+            <dt>Charcoal Churros with Salted egg sauce</dt>
+            <span>RM 15</span>
+            </dl>
+
+            <figure style="margin: 60px 60px 10px 60px">
+                <img src="churros with salted caramel.jpg" alt="charcoal waffle" width=250px; height=300px />
+                <figcaption>Churros <br/>with Salted Caramel Sauce</figcaption>
+            </figure>
+        </div>
+
+        <div class="cakes">
+            <h2>Cakes</h2>
+            <dl>
+            <dt>Brownies with ice cream</dt>
+            <span>RM 12</span>
+            <dt>Molten Lava Cake with Vnilla Ice Cream</dt>
+            <span>RM 12</span>
+            <dt>Strawberry Shortcake (per slice)</dt>
+            <span>RM 12</span>
+            <dt>Tiramusu (per slice)</dt>
+            <span>RM 12</span>
+            <dt>Matcha Burnt Cheesecake (per slice)</dt>
+            <span>RM 12</span>
+            <dt>Mango Cheesecake (per slice)</dt>
+            <span>RM 12</span>
+            </dl>
+
+            <figure style="clear:left">
+                <img src="molten lava cake.jpg" alt="molten lava cake" width=200px; height=230px />
+                <figcaption>Molten Lava Cake </br> with Vanilla Ice Cream</figcaption>
+            </figure>
+
+            <figure>
+                <img src="strawberry shortcake.jpg" alt="strawberry shortcake" width=220px; height=290px/>
+                <figcaption>Strawberry Shortcake</figcaption>
+            </figure>
+
+        </div>
+        
+        <div class="others" id="dessert_others" style="clear:left; margin: 80px 50px;">
+            <h2>Others</h2>
+            <dl>
+            <dt>Creme Brulee</dt>
+            <span>RM 12</span>
+            <dt>Chocolate Mousse</dt>
+            <span>RM 12</span>
+            </dl>
+        </div>
+        <figure id="creme_brulee" style="margin-top: 80px;">
+            <img src="creme brulee.jpg" alt="creme brulee" width=250px; height=230px />
+            <figcaption>Creme Brulee</figcaption>
+        </figure>
+
+        <script>
+            var slideIndex = 3;
+            showSlides(slideIndex);
+    
+    
+            function plusSlides(n) {
+            showSlides(slideIndex += n);
+            }
+    
+            function currentSlide(n) {
+            showSlides(slideIndex = n);
+            }
+    
+            function showSlides(n) 
+            {
+                var i;
+                var slides = document.getElementsByClassName("menu_block");
+                var dots = document.getElementsByClassName("menu_dot");
+                if (n > slides.length) 
+                {
+                    slideIndex = 1;
+                }    
+                if (n < 1) 
+                {
+                    slideIndex = slides.length
+                }
+                for (i = 0; i < slides.length; i++) 
+                {
+                    slides[i].style.display = "none";  
+                }
+                for (i = 0; i < dots.length; i++) 
+                {
+                    dots[i].className = dots[i].className.replace(" active", "");
+                }
+                slides[slideIndex-1].style.display = "block";  
+                dots[slideIndex-1].className += " active";
+            }
+        </script>
+        <footer>
+            <div class="leftcolumn">
+              <h2 class="insideleft">3L's Cafe</h2>
+              <h1 class="insideleft">CONTACT US</h1>
+              <div class="insideleft">
+              <img id="telicon" src="tel icon.jpg"/><a  id="tellink" href="tel:+60169757158">0123456789</a>
+              </div>
+              <div class="insideleft">
+              <img  id="facebookicon" src="facebook icon.png"/><a  id="facebooklink" href="https://www.facebook.com/3L'scafe/">3L's cafe</a>
+              </div>
+              <div class="insideleft">
+              <img id="emailicon" src="emailicon.png"/><a id="emaillink" href="mailto:example@gmail.com">3L's cafe@gmail.com</a> 
+              </div>
+            </div>
+              <div class="middlecolumn">
+              <h1 id="h1membership" >MY MEMBERSHIP ACCOUNT</h1>
+              <a href="member.html">Create an account</a> <a href="member.html">Log in</a> 
+              <a href="reservation.html" id="reservationstyle"><b>RESERVATION</b></a> 
+            </div>
+              <div class="rightcolumn">
+              <h1 id="h1policies" >POLICIES</h1>
+              <a href="PrivaryPolicy.html">Privacy Policy</a> <a href="#">Terms of Use</a> 
+              </div>
+        
+        </footer>
+        
+    </body>
+</html>

@@ -1,0 +1,171 @@
+    
+    body {
+        background-color: rgb(220, 241, 245);
+    }
+
+    /*Heading style*/
+    h1.menu{
+        clear: left;
+        display: block;
+        margin: 50px auto 0px auto;
+        padding: 10px;
+        text-align:center;
+        color:darkblue;
+        line-height: 1.5;
+      
+    }
+
+    /* Menu header slide style */
+        .menu_header{
+        clear:left;
+        display: block;
+        width: 100%;
+        float: left;
+        text-align: center;
+        margin: 20px auto 20px auto;
+        font-family:Verdana, 'Times New Roman', Times, serif;
+    }
+
+   /*slideshow container styles*/
+   .menu_slideshow_container {
+    position: relative;
+    width: 100%;
+    margin: auto;
+    }
+
+    /* Hide the images by default */
+    .menu_block{
+        display: none;
+        margin: auto;
+    }
+
+    .menu_block a:link {
+        text-decoration: none;
+        display: inline-block;
+        background-color:rgba(188, 231, 231, 0.432);
+        width: 100%;
+        text-align: center;
+        margin: 140px auto;
+        color:rgb(255, 255, 255);
+        font-weight: 900;
+        font-size: 1.6em;
+        line-height: 100px;
+        transition: font-size 1.5s ease-in-out,
+                    color 0.5s;
+    }
+
+    .menu_block a:visited{
+        color:white;
+    }
+
+    .menu_block a:hover{
+        color:rgb(35, 134, 141);
+        font-size: 2em;
+        background-color:rgba(255, 255, 255, 0.61);
+    }
+
+    .menu_block a:active{
+        color:white;
+    }
+
+    div#food_menu {
+        display: block;
+        width: 100%;
+        height: 400px;
+        background-image: url("egg\ mayo\ sandwich.jpg");
+        background-size: cover;
+        background-position: center;
+        font-size: 1.5em;
+    }
+    div#beverage_menu{
+        display: block;
+        width: 100%;
+        height: 400px;
+        background-image: url("mojito.jpg");
+        background-size: cover;
+        background-position: 10% 35%;
+        background-clip: content-box;
+        font-size: 1.5em;
+    }
+    div#dessert_menu{
+        display: block;
+        width: 100%;
+        height: 400px;
+        background-image: url("strawberry\ shortcake.jpg");
+        background-size: cover;
+        background-position: center;
+        font-size: 1.5em;
+    }
+
+    /* Next & previous buttons */
+    .prev, .next {
+        cursor: pointer;
+        position: absolute;
+        top: 45%;
+        width: auto;
+        padding: 16px;
+        margin-top: -22px;
+        color: white;
+        font-weight: bold;
+        font-size: 18px;
+        transition: 0.6s ease;
+        border-radius: 0 3px 3px 0;
+        user-select: none;
+    }
+
+    /* Position the "previos button" to the left */
+    .prev {
+        top: 45%;
+        left: 0;
+        border-radius: 3px 0 0 3px;
+    }
+
+    /* Position the "next button" to the right */
+    .next {
+        top: 45%;
+        right: 0;
+        border-radius: 3px 0 0 3px;
+    }
+
+    /* On hover, enlarge the arrow button */
+    .prev:hover, .next:hover {
+        font-size: 30px;
+
+    }
+
+    /* Dots Style*/
+    .menu_dot {
+        cursor: pointer;
+        height: 15px;
+        width: 15px;
+        margin: -10px 2px;
+        background-color: rgb(173, 219, 241);
+        border-radius: 50%;
+        display: inline-block;
+        transition: background-color 0.6s ease;
+    }
+
+    .active, .menu_dot:hover {
+        background-color: rgb(154, 186, 204);
+    }
+
+    /* Fading animation */
+    .fade {
+        -webkit-animation-name: fade;
+        -webkit-animation-duration: 1.5s;
+        animation-name: fade;
+        animation-duration: 1.5s;
+    }
+
+    @-webkit-keyframes fade {
+        from {opacity: .4} 
+        to {opacity: 1}
+    }
+
+    @keyframes fade {
+        from {opacity: .4} 
+        to {opacity: 1}
+    }
+
+    
+    
